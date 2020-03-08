@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Squads" id="tm2-Mc-u62" customClass="SquadsCell" customModule="EntertainmentDashBoard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fDr-Zx-rj6">
+                        <rect key="frame" x="8" y="0.0" width="73" height="73"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="73" id="HZC-j0-sFG"/>
+                            <constraint firstAttribute="height" constant="73" id="dw4-4R-1za"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-4s-n64">
+                        <rect key="frame" x="88" y="17" width="321" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgg-6O-sLP">
+                        <rect key="frame" x="88" y="41" width="321" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="dNU-Bp-x59">
+                        <rect key="frame" x="427" y="28" width="16" height="16"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="NLa-hf-ibZ"/>
+                            <constraint firstAttribute="width" constant="16" id="R2D-Kq-RYm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.1058823529" green="0.098039215690000001" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="RyH-xq-kPL" firstAttribute="trailing" secondItem="dNU-Bp-x59" secondAttribute="trailing" constant="6" id="0jC-tP-5UD"/>
+                <constraint firstItem="fDr-Zx-rj6" firstAttribute="leading" secondItem="RyH-xq-kPL" secondAttribute="leading" constant="8" id="3VQ-LQ-a8J"/>
+                <constraint firstItem="Xgg-6O-sLP" firstAttribute="top" secondItem="d4k-4s-n64" secondAttribute="bottom" id="5XC-8B-4xO"/>
+                <constraint firstItem="RyH-xq-kPL" firstAttribute="bottom" secondItem="Xgg-6O-sLP" secondAttribute="bottom" constant="15" id="ETB-bQ-QWe"/>
+                <constraint firstItem="fDr-Zx-rj6" firstAttribute="centerY" secondItem="RyH-xq-kPL" secondAttribute="centerY" id="GeM-UQ-G90"/>
+                <constraint firstItem="d4k-4s-n64" firstAttribute="top" secondItem="RyH-xq-kPL" secondAttribute="top" constant="17" id="GtI-RP-uDC"/>
+                <constraint firstItem="RyH-xq-kPL" firstAttribute="trailing" secondItem="d4k-4s-n64" secondAttribute="trailing" constant="40" id="P6J-8g-cbF"/>
+                <constraint firstItem="Xgg-6O-sLP" firstAttribute="leading" secondItem="d4k-4s-n64" secondAttribute="leading" id="TUL-nJ-bcn"/>
+                <constraint firstItem="d4k-4s-n64" firstAttribute="leading" secondItem="fDr-Zx-rj6" secondAttribute="trailing" constant="7" id="eJK-ng-e9R"/>
+                <constraint firstItem="dNU-Bp-x59" firstAttribute="centerY" secondItem="RyH-xq-kPL" secondAttribute="centerY" constant="-0.5" id="kMY-sB-aN7"/>
+                <constraint firstItem="Xgg-6O-sLP" firstAttribute="trailing" secondItem="d4k-4s-n64" secondAttribute="trailing" id="lRT-Hy-FdR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="RyH-xq-kPL"/>
+            <size key="customSize" width="449" height="73"/>
+            <connections>
+                <outlet property="imgPlayer" destination="fDr-Zx-rj6" id="niv-DV-wCA"/>
+                <outlet property="playerNameLabel" destination="d4k-4s-n64" id="Nap-f9-Ial"/>
+                <outlet property="rolePlayingLabel" destination="Xgg-6O-sLP" id="Dfn-xX-3n3"/>
+            </connections>
+            <point key="canvasLocation" x="127.2" y="42.728635682158924"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="next" width="24" height="24"/>
+    </resources>
+</document>

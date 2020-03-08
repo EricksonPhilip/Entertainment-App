@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainSection" id="6K2-Kk-wDn" customClass="MainSectionHeaderView" customModule="EntertainmentDashBoard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmh-ca-gF7">
+                    <rect key="frame" x="0.0" y="15" width="375" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="QIl-8b-efQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Nl-wq-v4V">
+                    <rect key="frame" x="0.0" y="49" width="375" height="0.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="NSs-1w-wVS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2Nl-wq-v4V" firstAttribute="top" secondItem="qmh-ca-gF7" secondAttribute="bottom" constant="8" id="0Vl-i6-guv"/>
+                <constraint firstItem="qmh-ca-gF7" firstAttribute="leading" secondItem="6K2-Kk-wDn" secondAttribute="leading" id="0lw-T5-QfO"/>
+                <constraint firstItem="XGB-ex-NdP" firstAttribute="bottom" secondItem="2Nl-wq-v4V" secondAttribute="bottom" constant="18.5" id="7bG-Ku-0PQ"/>
+                <constraint firstItem="qmh-ca-gF7" firstAttribute="trailing" secondItem="2Nl-wq-v4V" secondAttribute="trailing" id="9hb-Tw-s0f"/>
+                <constraint firstItem="qmh-ca-gF7" firstAttribute="centerY" secondItem="6K2-Kk-wDn" secondAttribute="centerY" constant="-6" id="U1V-fy-qvt"/>
+                <constraint firstAttribute="trailing" secondItem="qmh-ca-gF7" secondAttribute="trailing" id="aGm-m8-hcY"/>
+                <constraint firstItem="qmh-ca-gF7" firstAttribute="leading" secondItem="2Nl-wq-v4V" secondAttribute="leading" id="cKD-J4-h7B"/>
+                <constraint firstItem="qmh-ca-gF7" firstAttribute="top" secondItem="XGB-ex-NdP" secondAttribute="top" constant="15" id="gPU-Aj-JYx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="XGB-ex-NdP"/>
+            <connections>
+                <outlet property="sectionheaderLabel" destination="qmh-ca-gF7" id="7YE-m6-uoE"/>
+            </connections>
+            <point key="canvasLocation" x="96.799999999999997" y="-82.758620689655174"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopArtist" id="Clm-73-CCl" customClass="MusicTopArtistCell" customModule="EntertainmentDashBoard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="199"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4YU-bK-U5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="166.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="166.5" id="aVD-qB-KpF"/>
+                            <constraint firstAttribute="width" constant="216" id="clH-JO-6RE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am1-lQ-s53">
+                        <rect key="frame" x="0.0" y="178.5" width="216" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="HiQ-rO-kr2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="4YU-bK-U5Z" firstAttribute="top" secondItem="Clm-73-CCl" secondAttribute="top" id="Jkg-0u-WB5"/>
+                <constraint firstItem="4YU-bK-U5Z" firstAttribute="leading" secondItem="Clm-73-CCl" secondAttribute="leading" id="VIW-cI-jMS"/>
+                <constraint firstAttribute="trailing" secondItem="Am1-lQ-s53" secondAttribute="trailing" id="ZTX-M9-E1f"/>
+                <constraint firstItem="Am1-lQ-s53" firstAttribute="leading" secondItem="Clm-73-CCl" secondAttribute="leading" id="ov0-OV-rl4"/>
+                <constraint firstAttribute="bottom" secondItem="Am1-lQ-s53" secondAttribute="bottom" id="pZR-hu-Usd"/>
+                <constraint firstItem="Am1-lQ-s53" firstAttribute="top" secondItem="4YU-bK-U5Z" secondAttribute="bottom" constant="12" id="tC3-Wd-ST3"/>
+                <constraint firstAttribute="trailing" secondItem="4YU-bK-U5Z" secondAttribute="trailing" id="usL-xT-MzJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="NRz-27-2gD"/>
+            <size key="customSize" width="216" height="199"/>
+            <connections>
+                <outlet property="imgArtist" destination="4YU-bK-U5Z" id="0FI-3l-2FC"/>
+                <outlet property="labelArtistName" destination="Am1-lQ-s53" id="jVs-8G-CEp"/>
+            </connections>
+            <point key="canvasLocation" x="259.19999999999999" y="9.4452773613193415"/>
+        </collectionViewCell>
+    </objects>
+</document>
