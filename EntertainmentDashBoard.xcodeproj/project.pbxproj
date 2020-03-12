@@ -84,6 +84,12 @@
 		45D1A5CC224065220015A396 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CB224065220015A396 /* Storyboarded.swift */; };
 		45D1A5CF224065A80015A396 /* MusicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CE224065A80015A396 /* MusicCoordinator.swift */; };
 		79D96812E19AE80BED5E95E6 /* Pods_EntertainmentDashBoardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5BBD9942ED43EF84D8BAFA /* Pods_EntertainmentDashBoardUITests.framework */; };
+		A7A97A232415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A222415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift */; };
+		A7A97A262415DF11007AA0B0 /* DashBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */; };
+		A7A97A2B2415EED9007AA0B0 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2A2415EED9007AA0B0 /* UIButtonExtension.swift */; };
+		A7A97A2D241733EB007AA0B0 /* HeaderDashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */; };
+		A7A97A3024187965007AA0B0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2F24187965007AA0B0 /* NewsViewController.swift */; };
+		A7A97A32241882AC007AA0B0 /* NewsHeadLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */; };
 		BBD3E6745105B3A92EE8FDB8 /* Pods_EntertainmentDashBoardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +196,12 @@
 		87827DE9CB684B3B4849B6A3 /* Pods-EntertainmentDashBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoard.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		935A0F30C5EE96510684D81D /* Pods_EntertainmentDashBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD646932DA7C43C7826CC7B /* Pods-EntertainmentDashBoardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardUITests.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardUITests/Pods-EntertainmentDashBoardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7A97A222415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDashBoardControllerViewController.swift; sourceTree = "<group>"; };
+		A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardCell.swift; sourceTree = "<group>"; };
+		A7A97A2A2415EED9007AA0B0 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDashBoardView.swift; sourceTree = "<group>"; };
+		A7A97A2F24187965007AA0B0 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeadLineCell.swift; sourceTree = "<group>"; };
 		A8D4ABCD55A268F6E1D9D814 /* Pods-EntertainmentDashBoardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardUITests.release.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardUITests/Pods-EntertainmentDashBoardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD2C38ADEC45144150081A23 /* Pods-EntertainmentDashBoardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardTests.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardTests/Pods-EntertainmentDashBoardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +262,7 @@
 		0741F74421E80A53008C4C9F /* EntertainmentDashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				A7A97A272415EEAC007AA0B0 /* Extension */,
 				076420AB21E8137400D6F2D2 /* Model */,
 				076420AC21E8137900D6F2D2 /* View */,
 				07FCD83A21EE394400C8B0EF /* ViewModel */,
@@ -284,6 +297,7 @@
 		0741F77621E80CA3008C4C9F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7A97A2E24187949007AA0B0 /* News */,
 				074CE12A220C828500BE3A07 /* Custom Controller */,
 				076420C121E81C1C00D6F2D2 /* Cells */,
 				0741F74521E80A53008C4C9F /* AppDelegate.swift */,
@@ -293,6 +307,7 @@
 				07FCD84321EF88FA00C8B0EF /* HalfSheetController.swift */,
 				074CE128220B6DAE00BE3A07 /* SourceWebViewController.swift */,
 				45672C602232F1BA004D49DE /* MatchDetailController.swift */,
+				A7A97A222415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -340,6 +355,7 @@
 			children = (
 				076420B921E815C500D6F2D2 /* NewsCell.swift */,
 				074CE124220B2D0700BE3A07 /* NewsListCell.swift */,
+				A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -528,6 +544,7 @@
 		076420C121E81C1C00D6F2D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A7A97A242415DB52007AA0B0 /* DashBoard */,
 				074CE15C2229A15A00BE3A07 /* Music */,
 				074CE14D221F1F4700BE3A07 /* Weather */,
 				074CE131220C9D9400BE3A07 /* Headers */,
@@ -632,6 +649,31 @@
 				45D1A5CE224065A80015A396 /* MusicCoordinator.swift */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		A7A97A242415DB52007AA0B0 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */,
+				A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		A7A97A272415EEAC007AA0B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A7A97A2A2415EED9007AA0B0 /* UIButtonExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A7A97A2E24187949007AA0B0 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				A7A97A2F24187965007AA0B0 /* NewsViewController.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		D47D0EBE9864F085F8DD4B9E /* Frameworks */ = {
@@ -898,8 +940,10 @@
 			files = (
 				07FCD84221EF879300C8B0EF /* ViewMovieController.swift in Sources */,
 				076420CD21E8263500D6F2D2 /* NewsModel.swift in Sources */,
+				A7A97A232415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift in Sources */,
 				0741F74821E80A53008C4C9F /* DashBoardController.swift in Sources */,
 				074CE12C220C82A700BE3A07 /* ViewControllerPannable.swift in Sources */,
+				A7A97A2B2415EED9007AA0B0 /* UIButtonExtension.swift in Sources */,
 				074CE16F222D9B8600BE3A07 /* MusicTopTracksCell.swift in Sources */,
 				076420D621E82D0200D6F2D2 /* DashBoardController+Extension.swift in Sources */,
 				076420C721E8260800D6F2D2 /* CricketModel.swift in Sources */,
@@ -929,18 +973,22 @@
 				07FCD84421EF88FA00C8B0EF /* HalfSheetController.swift in Sources */,
 				074CE1682229B60D00BE3A07 /* MusicViewModel.swift in Sources */,
 				074CE139220DE71000BE3A07 /* PopularTVModel.swift in Sources */,
+				A7A97A262415DF11007AA0B0 /* DashBoardCell.swift in Sources */,
 				076420CB21E8262C00D6F2D2 /* TvModel.swift in Sources */,
 				4596C7EC223AD168001FB675 /* UIViewContoller+Extension.swift in Sources */,
 				076420B821E815AE00D6F2D2 /* TvCell.swift in Sources */,
 				45D1A5CA224027FE0015A396 /* Coordinator.swift in Sources */,
+				A7A97A2D241733EB007AA0B0 /* HeaderDashBoardView.swift in Sources */,
 				074CE125220B2D0700BE3A07 /* NewsListCell.swift in Sources */,
 				074CE15E2229A16F00BE3A07 /* MusicTopArtistCell.swift in Sources */,
 				076420BF21E8194300D6F2D2 /* ServiceManager.swift in Sources */,
 				07FCD84021EF838300C8B0EF /* MainSectionHeaderView.swift in Sources */,
+				A7A97A3024187965007AA0B0 /* NewsViewController.swift in Sources */,
 				076420AE21E813BB00D6F2D2 /* MovieCell.swift in Sources */,
 				45D1A5CF224065A80015A396 /* MusicCoordinator.swift in Sources */,
 				4596C7F2223AED19001FB675 /* UIColor+Extension.swift in Sources */,
 				076420BA21E815C500D6F2D2 /* NewsCell.swift in Sources */,
+				A7A97A32241882AC007AA0B0 /* NewsHeadLineCell.swift in Sources */,
 				074CE1422217236B00BE3A07 /* MovieHeaderView.swift in Sources */,
 				0741F74E21E80A53008C4C9F /* EntertainmentDashBoard.xcdatamodeld in Sources */,
 				076420BC21E815D500D6F2D2 /* WeatherCell.swift in Sources */,

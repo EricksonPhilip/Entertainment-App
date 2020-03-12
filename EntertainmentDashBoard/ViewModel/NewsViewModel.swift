@@ -31,13 +31,15 @@ class NewsViewModel{
                 let newsImageUrl = news["urlToImage"] as? String ?? "Nil"
                 let newsTitle = news["title"] as! String
                 let newsDesc  = news["description"] as? String ?? "Description Not availble"
+                let newsContent = news["content"] as? String ?? "Content not available"
                 
                 let newsModel = NewsModel(newsId: newsId,
                                           newsUrl: newsUrl,
                                           newsImageUrl:newsImageUrl,
                                           sourceName: sourceName,
                                           newsTitle: newsTitle,
-                                          newsDesc: newsDesc)
+                                          newsDesc: newsDesc,
+                                          newsContent: newsContent)
                 
                 self.model.append(newsModel)
                 

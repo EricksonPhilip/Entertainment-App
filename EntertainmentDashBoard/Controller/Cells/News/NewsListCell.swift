@@ -39,7 +39,8 @@ class NewsListCell: UICollectionViewCell {
         label.layer.shadowOpacity = 0.5
         label.layer.shadowRadius = 0.5
         label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOffset = CGSize(width: 0.0, height: -0.5)
+        label.layer.shadowOffset = CGSize(width: 0.0,
+                                          height: -0.5)
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

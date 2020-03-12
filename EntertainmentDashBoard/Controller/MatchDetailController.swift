@@ -67,8 +67,6 @@ class MatchDetailController: UIViewController {
         infoView.addSubview(infoLabel)
         
         squadCollectionView.backgroundView = infoView
-        
-        
     }
     
     func registerCell(){

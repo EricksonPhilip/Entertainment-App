@@ -14,13 +14,15 @@ struct NewsModel {
     let sourceName:String!
     let newsTitle:String!
     let newsDesc:String!
+    let newsContent:String!
     
     init(newsId:String,
          newsUrl:String,
          newsImageUrl:String,
          sourceName:String,
          newsTitle:String,
-         newsDesc:String) {
+         newsDesc:String,
+        newsContent:String) {
         
         self.newsId = newsId
         self.newsUrl = newsUrl
@@ -28,5 +30,6 @@ struct NewsModel {
         self.sourceName = sourceName
         self.newsTitle = newsTitle
         self.newsDesc = newsDesc
+        self.newsContent = newsContent
     }
 }
