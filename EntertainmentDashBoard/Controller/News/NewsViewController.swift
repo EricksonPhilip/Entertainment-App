@@ -10,6 +10,8 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    var _view:NewsPreLoaderView? = nil
+    
     lazy var tableView:UITableView = {
         let tblView = UITableView(frame: .zero)
         tblView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +20,8 @@ class NewsViewController: UIViewController {
         tblView.rowHeight = UITableView.automaticDimension
         tblView.estimatedRowHeight = 100
         tblView.tableFooterView = UIView()
-
+        _view = NewsPreLoaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+        tblView.backgroundView = _view
         return tblView
     }()
     
@@ -32,6 +35,12 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         setUpTableView()
         getTopHeadLines()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if let perLoader = _view{
+            perLoader.gradAnimationView()
+        }
     }
     
     func setUpTableView(){
@@ -58,6 +67,9 @@ class NewsViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 if success{
+                    if let preLoader = strongSelf._view{
+                        preLoader.stopAnimation()
+                    }
                     strongSelf.tableView.reloadData()
                 }
             }
@@ -83,6 +95,8 @@ extension NewsViewController:UITableViewDataSource{
         cell.delegate = self
         
         cell.populate(model: model)
+        
+        cell.selectionStyle = .none
         
         return cell
     }

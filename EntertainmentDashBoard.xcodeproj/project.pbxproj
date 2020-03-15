@@ -90,6 +90,8 @@
 		A7A97A2D241733EB007AA0B0 /* HeaderDashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */; };
 		A7A97A3024187965007AA0B0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2F24187965007AA0B0 /* NewsViewController.swift */; };
 		A7A97A32241882AC007AA0B0 /* NewsHeadLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */; };
+		A7A97A35241B0589007AA0B0 /* NewsPreLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */; };
+		A7A97A74241E86B0007AA0B0 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A73241E86B0007AA0B0 /* MoviesViewController.swift */; };
 		BBD3E6745105B3A92EE8FDB8 /* Pods_EntertainmentDashBoardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +204,8 @@
 		A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDashBoardView.swift; sourceTree = "<group>"; };
 		A7A97A2F24187965007AA0B0 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeadLineCell.swift; sourceTree = "<group>"; };
+		A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPreLoaderView.swift; sourceTree = "<group>"; };
+		A7A97A73241E86B0007AA0B0 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		A8D4ABCD55A268F6E1D9D814 /* Pods-EntertainmentDashBoardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardUITests.release.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardUITests/Pods-EntertainmentDashBoardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD2C38ADEC45144150081A23 /* Pods-EntertainmentDashBoardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardTests.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardTests/Pods-EntertainmentDashBoardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +266,7 @@
 		0741F74421E80A53008C4C9F /* EntertainmentDashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				A7A97A33241B0561007AA0B0 /* Utils */,
 				A7A97A272415EEAC007AA0B0 /* Extension */,
 				076420AB21E8137400D6F2D2 /* Model */,
 				076420AC21E8137900D6F2D2 /* View */,
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A97A2E24187949007AA0B0 /* News */,
+				A7A97A72241E8697007AA0B0 /* Movies */,
 				074CE12A220C828500BE3A07 /* Custom Controller */,
 				076420C121E81C1C00D6F2D2 /* Cells */,
 				0741F74521E80A53008C4C9F /* AppDelegate.swift */,
@@ -676,6 +682,22 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		A7A97A33241B0561007AA0B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A7A97A72241E8697007AA0B0 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				A7A97A73241E86B0007AA0B0 /* MoviesViewController.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
 		D47D0EBE9864F085F8DD4B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +971,7 @@
 				076420C721E8260800D6F2D2 /* CricketModel.swift in Sources */,
 				074CE152222441A600BE3A07 /* MovieListCell.swift in Sources */,
 				45D1A5CC224065220015A396 /* Storyboarded.swift in Sources */,
+				A7A97A74241E86B0007AA0B0 /* MoviesViewController.swift in Sources */,
 				076420C921E8261E00D6F2D2 /* MoviesPostureModel.swift in Sources */,
 				074CE14C221F106C00BE3A07 /* WeatherViewModel.swift in Sources */,
 				4596C7EE223AD1B6001FB675 /* UIView+Extension.swift in Sources */,
@@ -976,6 +999,7 @@
 				A7A97A262415DF11007AA0B0 /* DashBoardCell.swift in Sources */,
 				076420CB21E8262C00D6F2D2 /* TvModel.swift in Sources */,
 				4596C7EC223AD168001FB675 /* UIViewContoller+Extension.swift in Sources */,
+				A7A97A35241B0589007AA0B0 /* NewsPreLoaderView.swift in Sources */,
 				076420B821E815AE00D6F2D2 /* TvCell.swift in Sources */,
 				45D1A5CA224027FE0015A396 /* Coordinator.swift in Sources */,
 				A7A97A2D241733EB007AA0B0 /* HeaderDashBoardView.swift in Sources */,
