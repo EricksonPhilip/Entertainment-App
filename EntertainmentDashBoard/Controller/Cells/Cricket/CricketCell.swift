@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 class CricketCell: UICollectionViewCell {
     
@@ -21,8 +19,6 @@ class CricketCell: UICollectionViewCell {
     private var indexOfCellBeforeDragging = 0
     private var defaultNumberOfPages = 8
     
-    
-    private let bag = DisposeBag()
 
     override func awakeFromNib() {
         setDatasourceAndDelegate()

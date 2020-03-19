@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05FD1A7D53C901BACCDCE251 /* Pods_EntertainmentDashBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935A0F30C5EE96510684D81D /* Pods_EntertainmentDashBoard.framework */; };
 		0741F74621E80A53008C4C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741F74521E80A53008C4C9F /* AppDelegate.swift */; };
 		0741F74821E80A53008C4C9F /* DashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741F74721E80A53008C4C9F /* DashBoardController.swift */; };
 		0741F74B21E80A53008C4C9F /* EntertainmentBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0741F74921E80A53008C4C9F /* EntertainmentBoard.storyboard */; };
@@ -83,7 +82,6 @@
 		45D1A5CA224027FE0015A396 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5C9224027FE0015A396 /* Coordinator.swift */; };
 		45D1A5CC224065220015A396 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CB224065220015A396 /* Storyboarded.swift */; };
 		45D1A5CF224065A80015A396 /* MusicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CE224065A80015A396 /* MusicCoordinator.swift */; };
-		79D96812E19AE80BED5E95E6 /* Pods_EntertainmentDashBoardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5BBD9942ED43EF84D8BAFA /* Pods_EntertainmentDashBoardUITests.framework */; };
 		A7A97A232415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A222415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift */; };
 		A7A97A262415DF11007AA0B0 /* DashBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */; };
 		A7A97A2B2415EED9007AA0B0 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A2A2415EED9007AA0B0 /* UIButtonExtension.swift */; };
@@ -92,7 +90,8 @@
 		A7A97A32241882AC007AA0B0 /* NewsHeadLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */; };
 		A7A97A35241B0589007AA0B0 /* NewsPreLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */; };
 		A7A97A74241E86B0007AA0B0 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A73241E86B0007AA0B0 /* MoviesViewController.swift */; };
-		BBD3E6745105B3A92EE8FDB8 /* Pods_EntertainmentDashBoardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */; };
+		A7A97A76241E8959007AA0B0 /* MoviesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A75241E8959007AA0B0 /* MoviesViewCell.swift */; };
+		A7A97A7C24212E98007AA0B0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A7A97A7B24212E98007AA0B0 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,10 +193,6 @@
 		45D1A5C9224027FE0015A396 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		45D1A5CB224065220015A396 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		45D1A5CE224065A80015A396 /* MusicCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCoordinator.swift; sourceTree = "<group>"; };
-		784D57CD307C75B36C1DA787 /* Pods-EntertainmentDashBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoard.release.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard.release.xcconfig"; sourceTree = "<group>"; };
-		87827DE9CB684B3B4849B6A3 /* Pods-EntertainmentDashBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoard.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard.debug.xcconfig"; sourceTree = "<group>"; };
-		935A0F30C5EE96510684D81D /* Pods_EntertainmentDashBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DD646932DA7C43C7826CC7B /* Pods-EntertainmentDashBoardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardUITests.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardUITests/Pods-EntertainmentDashBoardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7A97A222415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDashBoardControllerViewController.swift; sourceTree = "<group>"; };
 		A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardCell.swift; sourceTree = "<group>"; };
 		A7A97A2A2415EED9007AA0B0 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -206,11 +201,7 @@
 		A7A97A31241882AC007AA0B0 /* NewsHeadLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeadLineCell.swift; sourceTree = "<group>"; };
 		A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPreLoaderView.swift; sourceTree = "<group>"; };
 		A7A97A73241E86B0007AA0B0 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
-		A8D4ABCD55A268F6E1D9D814 /* Pods-EntertainmentDashBoardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardUITests.release.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardUITests/Pods-EntertainmentDashBoardUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BD2C38ADEC45144150081A23 /* Pods-EntertainmentDashBoardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardTests.debug.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardTests/Pods-EntertainmentDashBoardTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAC27128F320C99A3A563EC4 /* Pods-EntertainmentDashBoardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntertainmentDashBoardTests.release.xcconfig"; path = "Target Support Files/Pods-EntertainmentDashBoardTests/Pods-EntertainmentDashBoardTests.release.xcconfig"; sourceTree = "<group>"; };
-		EC5BBD9942ED43EF84D8BAFA /* Pods_EntertainmentDashBoardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntertainmentDashBoardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A97A75241E8959007AA0B0 /* MoviesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05FD1A7D53C901BACCDCE251 /* Pods_EntertainmentDashBoard.framework in Frameworks */,
+				A7A97A7C24212E98007AA0B0 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +217,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD3E6745105B3A92EE8FDB8 /* Pods_EntertainmentDashBoardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +224,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D96812E19AE80BED5E95E6 /* Pods_EntertainmentDashBoardUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +237,6 @@
 				0741F75C21E80A56008C4C9F /* EntertainmentDashBoardTests */,
 				0741F76721E80A56008C4C9F /* EntertainmentDashBoardUITests */,
 				0741F74321E80A53008C4C9F /* Products */,
-				D4C600499A615E6565F55613 /* Pods */,
 				D47D0EBE9864F085F8DD4B9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -343,6 +331,7 @@
 				076420AD21E813BB00D6F2D2 /* MovieCell.swift */,
 				074CE151222441A600BE3A07 /* MovieListCell.swift */,
 				074CE1402217232300BE3A07 /* Movie Details */,
+				A7A97A75241E8959007AA0B0 /* MoviesViewCell.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -701,24 +690,8 @@
 		D47D0EBE9864F085F8DD4B9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				935A0F30C5EE96510684D81D /* Pods_EntertainmentDashBoard.framework */,
-				DD12D9900EFAFEB47EFB5093 /* Pods_EntertainmentDashBoardTests.framework */,
-				EC5BBD9942ED43EF84D8BAFA /* Pods_EntertainmentDashBoardUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D4C600499A615E6565F55613 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				87827DE9CB684B3B4849B6A3 /* Pods-EntertainmentDashBoard.debug.xcconfig */,
-				784D57CD307C75B36C1DA787 /* Pods-EntertainmentDashBoard.release.xcconfig */,
-				BD2C38ADEC45144150081A23 /* Pods-EntertainmentDashBoardTests.debug.xcconfig */,
-				EAC27128F320C99A3A563EC4 /* Pods-EntertainmentDashBoardTests.release.xcconfig */,
-				9DD646932DA7C43C7826CC7B /* Pods-EntertainmentDashBoardUITests.debug.xcconfig */,
-				A8D4ABCD55A268F6E1D9D814 /* Pods-EntertainmentDashBoardUITests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,17 +701,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0741F76D21E80A56008C4C9F /* Build configuration list for PBXNativeTarget "EntertainmentDashBoard" */;
 			buildPhases = (
-				08BDD817F4ADA5BFE12B04BC /* [CP] Check Pods Manifest.lock */,
 				0741F73E21E80A53008C4C9F /* Sources */,
 				0741F73F21E80A53008C4C9F /* Frameworks */,
 				0741F74021E80A53008C4C9F /* Resources */,
-				FA190FB25FE8BCD7238D87D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = EntertainmentDashBoard;
+			packageProductDependencies = (
+				A7A97A7B24212E98007AA0B0 /* SDWebImage */,
+			);
 			productName = EntertainmentDashBoard;
 			productReference = 0741F74221E80A53008C4C9F /* EntertainmentDashBoard.app */;
 			productType = "com.apple.product-type.application";
@@ -813,6 +787,9 @@
 				Base,
 			);
 			mainGroup = 0741F73921E80A53008C4C9F;
+			packageReferences = (
+				A7A97A7A24212E98007AA0B0 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 0741F74321E80A53008C4C9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -870,28 +847,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08BDD817F4ADA5BFE12B04BC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EntertainmentDashBoard-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5BAF45712582786FEFB19DB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -936,23 +891,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA190FB25FE8BCD7238D87D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EntertainmentDashBoard/Pods-EntertainmentDashBoard-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -972,6 +910,7 @@
 				074CE152222441A600BE3A07 /* MovieListCell.swift in Sources */,
 				45D1A5CC224065220015A396 /* Storyboarded.swift in Sources */,
 				A7A97A74241E86B0007AA0B0 /* MoviesViewController.swift in Sources */,
+				A7A97A76241E8959007AA0B0 /* MoviesViewCell.swift in Sources */,
 				076420C921E8261E00D6F2D2 /* MoviesPostureModel.swift in Sources */,
 				074CE14C221F106C00BE3A07 /* WeatherViewModel.swift in Sources */,
 				4596C7EE223AD1B6001FB675 /* UIView+Extension.swift in Sources */,
@@ -1192,7 +1131,6 @@
 		};
 		0741F76E21E80A56008C4C9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87827DE9CB684B3B4849B6A3 /* Pods-EntertainmentDashBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1213,7 +1151,6 @@
 		};
 		0741F76F21E80A56008C4C9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 784D57CD307C75B36C1DA787 /* Pods-EntertainmentDashBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1234,7 +1171,6 @@
 		};
 		0741F77121E80A56008C4C9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD2C38ADEC45144150081A23 /* Pods-EntertainmentDashBoardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1256,7 +1192,6 @@
 		};
 		0741F77221E80A56008C4C9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAC27128F320C99A3A563EC4 /* Pods-EntertainmentDashBoardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1278,7 +1213,6 @@
 		};
 		0741F77421E80A56008C4C9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DD646932DA7C43C7826CC7B /* Pods-EntertainmentDashBoardUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1299,7 +1233,6 @@
 		};
 		0741F77521E80A56008C4C9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D4ABCD55A268F6E1D9D814 /* Pods-EntertainmentDashBoardUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1358,6 +1291,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A7A97A7A24212E98007AA0B0 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7A97A7B24212E98007AA0B0 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7A97A7A24212E98007AA0B0 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0741F74C21E80A53008C4C9F /* EntertainmentDashBoard.xcdatamodeld */ = {

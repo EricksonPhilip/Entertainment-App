@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import PopMenu
 
 class MovieCell: UICollectionViewCell {
     
@@ -81,21 +80,21 @@ class MovieCell: UICollectionViewCell {
     }
     
     func showPopUpMenu(){
-        let popMenuManager = PopMenuManager.default
-        popMenuManager.popMenuDelegate = self
-        popMenuManager.popMenuAppearance.popMenuColor = .configure(background: .solid(fill: UIColor.white),
-                                                                   action: .tint(UIColor.black))
-        popMenuManager.popMenuAppearance.popMenuPresentationStyle = .cover()
-    
-        popMenuManager.actions = [
-            PopMenuDefaultAction(title: movieTypeList[0].rawValue),
-            PopMenuDefaultAction(title: movieTypeList[1].rawValue),
-            PopMenuDefaultAction(title: movieTypeList[2].rawValue),
-            PopMenuDefaultAction(title: movieTypeList[3].rawValue),
-            PopMenuDefaultAction(title: movieTypeList[4].rawValue)
-        ]
-        
-        popMenuManager.present(sourceView: dropDownView)
+//        let popMenuManager = PopMenuManager.default
+//        popMenuManager.popMenuDelegate = self
+//        popMenuManager.popMenuAppearance.popMenuColor = .configure(background: .solid(fill: UIColor.white),
+//                                                                   action: .tint(UIColor.black))
+//        popMenuManager.popMenuAppearance.popMenuPresentationStyle = .cover()
+//
+//        popMenuManager.actions = [
+//            PopMenuDefaultAction(title: movieTypeList[0].rawValue),
+//            PopMenuDefaultAction(title: movieTypeList[1].rawValue),
+//            PopMenuDefaultAction(title: movieTypeList[2].rawValue),
+//            PopMenuDefaultAction(title: movieTypeList[3].rawValue),
+//            PopMenuDefaultAction(title: movieTypeList[4].rawValue)
+//        ]
+//
+//        popMenuManager.present(sourceView: dropDownView)
     }
     
     func makeDropDownClickable(){
@@ -273,33 +272,6 @@ class MovieCell: UICollectionViewCell {
     
     @IBAction func listMovieSections(_ sender: Any) {
         showPopUpMenu()
-    }
-}
-
-extension MovieCell:PopMenuViewControllerDelegate{
-    func popMenuDidSelectItem(_ popMenuViewController: PopMenuViewController, at index: Int) {
-        
-        reset()
-        scrollCellsToFirstIndex()
-        currPageNo = 1
-        labelCurrentPageNo.text = "1"
-        
-        movieTypeListLabel.text = movieTypeList[index].rawValue
-        
-        switch index {
-        case 0:
-            getNumberOfPopularMovies(pageNo: 1)
-        case 1:
-            getLatestMovies()
-        case 2:
-            getNowPlayingMovies(pageNo: 1)
-        case 3:
-            getTopRated(pageNo: 1)
-        case 4:
-            getUpcomingMovies(pageNo: 1)
-        default:
-            getNumberOfPopularMovies(pageNo: 1)
-        }
     }
 }
 

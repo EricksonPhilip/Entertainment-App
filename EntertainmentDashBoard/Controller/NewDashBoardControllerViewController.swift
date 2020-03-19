@@ -10,16 +10,16 @@ import UIKit
 
 class NewDashBoardControllerViewController: UIViewController {
     
-    let modelDashBoard :[(image:String,title:String)] = [(image:"defaultMovieImage",title:"News"),
-                                                         (image:"MoviePlaceHolder",title:"Movies"),
-                                                         (image:"defaultTV",title:"TV show"),
-                                                         (image:"next",title:"Cricket"),
-                                                         (image:"close",title:"Music"),
-                                                         (image:"UnderConstruction",title:"Settings")]
+    let modelDashBoard :[(image:String,title:String)] = [(image:"NewsBkgSet",title:"News"),
+                                                         (image:"Joker4k-1024",title:"Movies"),
+                                                         (image:"Friends",title:"TV show"),
+                                                         (image:"CricketBkg",title:"Cricket"),
+                                                         (image:"MusicBkg",title:"Music"),
+                                                         (image:"SettingsBkg",title:"Settings")]
 
     lazy var dashBoardView :UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.itemSize = CGSize(width: 100, height: 160)
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 20, right: 5)
         layout.minimumInteritemSpacing = 10
         let collectionView = UICollectionView(frame: .zero,
@@ -42,7 +42,7 @@ class NewDashBoardControllerViewController: UIViewController {
     func styleViewController(){
         self.title = "Entertainment"
         navigationController?.navigationBar.tintColor = .black
-        dashBoardView.backgroundColor = .black
+        dashBoardView.backgroundColor = UIColor(red: 27/255.0, green: 38/255.0, blue: 44/255.0, alpha: 1.0)
     }
     
     func configureDashBoardCollectionView(){
@@ -65,7 +65,6 @@ class NewDashBoardControllerViewController: UIViewController {
         dashBoardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         dashBoardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         dashBoardView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        //dashBoardView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
     }
   
 }
@@ -79,7 +78,7 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashBoardCell.dashboardCellID,
                                                       for: indexPath) as! DashBoardCell
         let row = indexPath.row
-        cell.imageView.image = UIImage(named: modelDashBoard[row].image)
+        cell.bkgImageView.image = UIImage(named: modelDashBoard[row].image)
         cell.title.text = modelDashBoard[row].title
         
         return cell
@@ -100,8 +99,20 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
 
 extension NewDashBoardControllerViewController:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = NewsViewController()
-        self.present(controller, animated: true, completion: nil)
+        
+        switch modelDashBoard[indexPath.row].title {
+        case "News":
+            let controller = NewsViewController()
+            controller.modalPresentationStyle = .formSheet
+            present(controller, animated: true, completion: nil)
+        case "Movies":
+            let controller = MoviesViewController()
+            controller.modalPresentationStyle = .formSheet
+            present(controller, animated: true, completion: nil)
+        default:
+            print("Default")
+        }
+    
     }
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
@@ -119,7 +130,7 @@ extension NewDashBoardControllerViewController:UICollectionViewDelegateFlowLayou
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: 100)
+        return CGSize(width: size, height: 160)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

@@ -12,27 +12,19 @@ class DashBoardCell: UICollectionViewCell {
     
     static var dashboardCellID = "DashBoardCell"
     
-    lazy var vStackView:UIStackView = {
-        let view = UIStackView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.distribution = .fillProportionally
-        view.alignment = .leading
-        view.spacing = 1
-        return view
-    }()
-    
-    lazy var imageView:UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "defaultMovieImage")
-        return view
+    lazy var bkgImageView:UIImageView = {
+        let iView = UIImageView(frame: .zero)
+        iView.translatesAutoresizingMaskIntoConstraints = false
+        iView.image = UIImage(named:"Joker4k-1024")
+        iView.contentMode = .scaleToFill
+        return iView
     }()
     
     lazy var title:UILabel = {
         let view = UILabel(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Hello"
+        view.textColor = .white
         return view
     }()
 
@@ -52,28 +44,29 @@ class DashBoardCell: UICollectionViewCell {
     
     func setUp(){
         contentView.backgroundColor = .white
-        setStackViewConstraints()
-        addButtonsToStackView()
+        setBackGroundImageView()
+        setTitleConstrainsts()
         setCornerRadius()
     }
     
-    func setStackViewConstraints(){
-        contentView.addSubview(vStackView)
-        vStackView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5).isActive = true
-        vStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
-        vStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5).isActive = true
-        vStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
+    func setBackGroundImageView(){
+        contentView.addSubview(bkgImageView)
+        bkgImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        bkgImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        bkgImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        bkgImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
-    func addButtonsToStackView(){
-        vStackView.addArrangedSubview(imageView)
-        vStackView.addArrangedSubview(title)
-        
-        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+    func setTitleConstrainsts(){
+        contentView.addSubview(title)
+        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
+        title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
     }
+    
     
     func setCornerRadius(){
         contentView.layer.cornerRadius = 15
+        bkgImageView.layer.cornerRadius = 15
+        bkgImageView.clipsToBounds = true
     }
 }

@@ -90,7 +90,7 @@ class NewsPreLoaderView: UIView {
         preTitleView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         vStackView.addArrangedSubview(preImageView)
-        preImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        preImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
         vStackView.addArrangedSubview(preDescView)
         preDescView.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -100,7 +100,7 @@ class NewsPreLoaderView: UIView {
         preTitleView1.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         vStackView.addArrangedSubview(preImageView1)
-        preImageView1.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        preImageView1.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
         vStackView.addArrangedSubview(preDescView1)
         preDescView1.heightAnchor.constraint(equalToConstant: 100).isActive = true

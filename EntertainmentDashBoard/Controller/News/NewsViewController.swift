@@ -22,6 +22,7 @@ class NewsViewController: UIViewController {
         tblView.tableFooterView = UIView()
         _view = NewsPreLoaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         tblView.backgroundView = _view
+        tblView.separatorStyle = .none
         return tblView
     }()
     
@@ -67,9 +68,7 @@ class NewsViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 if success{
-                    if let preLoader = strongSelf._view{
-                        preLoader.stopAnimation()
-                    }
+                    strongSelf.tableView.backgroundView = UIView()
                     strongSelf.tableView.reloadData()
                 }
             }
@@ -83,6 +82,7 @@ class NewsViewController: UIViewController {
 }
 
 extension NewsViewController:UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfNews()
     }
@@ -97,6 +97,8 @@ extension NewsViewController:UITableViewDataSource{
         cell.populate(model: model)
         
         cell.selectionStyle = .none
+        
+        cell.setSpacerViewWidth(width: tableView.frame.width)
         
         return cell
     }
@@ -143,7 +145,7 @@ extension NewsViewController:UITableViewDataSource{
 
 extension NewsViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
     }
 }
 

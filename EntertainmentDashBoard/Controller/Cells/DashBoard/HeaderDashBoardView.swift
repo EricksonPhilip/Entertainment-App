@@ -42,8 +42,8 @@ class HeaderDashBoardView: UICollectionReusableView {
         addSubview(imageView)
         
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         headerTitle.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
         headerTitle.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 5).isActive = true

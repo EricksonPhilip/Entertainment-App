@@ -20,6 +20,7 @@ class NewsHeadLineCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "[Title]"
+        label.textColor = .white
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
@@ -29,17 +30,8 @@ class NewsHeadLineCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "[Descriptions]"
+        label.textColor = .white
         label.numberOfLines = 0
-        //label.isHidden = true
-        return label
-    }()
-    
-    lazy var content:UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "[content]"
-        label.numberOfLines = 0
-        //label.isHidden = true
         return label
     }()
     
@@ -55,11 +47,17 @@ class NewsHeadLineCell: UITableViewCell {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Read More...", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(readMoreButtonAction), for: .touchUpInside)
         return button
     }()
     
+    lazy var spacerView:UIView = {
+        let sView = UIView(frame: .zero)
+        sView.translatesAutoresizingMaskIntoConstraints = false
+        sView.backgroundColor = .black
+        return sView
+    }()
     
     lazy var stackView:UIStackView = {
         let vStackView = UIStackView(frame: .zero)
@@ -88,32 +86,53 @@ class NewsHeadLineCell: UITableViewCell {
     }
     
     func setUp(){
+        backgroundColor = UIColor(red: 27/255.0, green: 38/255.0, blue: 44/255.0, alpha: 1.0)
         setStackViewConstraints()
         addControlsToStackView()
     }
+    
+    
 
     func setStackViewConstraints(){
         contentView.addSubview(stackView)
         stackView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -10).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     func addControlsToStackView(){
         stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(imgView)
         stackView.addArrangedSubview(desc)
-        stackView.addArrangedSubview(content)
         stackView.addArrangedSubview(readMore)
+        stackView.addArrangedSubview(spacerView)
         
-        imgView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        title.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
+        title.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+        
+        imgView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
+        imgView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+        
+        desc.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
+        desc.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+        
+        readMore.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
+        readMore.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
+        
+        spacerView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
+        
+        imgView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        spacerView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    func setSpacerViewWidth(width:CGFloat){
+        spacerView.widthAnchor.constraint(equalToConstant: width).isActive = true
     }
     
     func populate(model:NewsModel){
         title.text = model.newsTitle
         desc.text = model.newsDesc
-        content.text = model.newsContent
         setImageUrl(imageUrl: model.newsImageUrl)
     }
     
@@ -126,5 +145,4 @@ class NewsHeadLineCell: UITableViewCell {
     func readMoreButtonAction(){
         delegate?.readMoreTapped(cell: self)
     }
-
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PopMenu
+//import PopMenu
 
 class MatchesCell: UICollectionViewCell {
     
@@ -73,18 +73,18 @@ class MatchesCell: UICollectionViewCell {
     }
     
     func showPopUpMenu(){
-        let popMenuManager = PopMenuManager.default
-        popMenuManager.popMenuDelegate = self
-        popMenuManager.popMenuAppearance.popMenuColor = .configure(background: .solid(fill: UIColor.white),
-                                                                   action: .tint(UIColor.black))
-        popMenuManager.popMenuAppearance.popMenuPresentationStyle = .cover()
-        
-        popMenuManager.actions = [
-            PopMenuDefaultAction(title: "View Score"),
-            PopMenuDefaultAction(title:"View Squad")
-        ]
-        
-        popMenuManager.present(sourceView: moreButton)
+//        let popMenuManager = PopMenuManager.default
+//        popMenuManager.popMenuDelegate = self
+//        popMenuManager.popMenuAppearance.popMenuColor = .configure(background: .solid(fill: UIColor.white),
+//                                                                   action: .tint(UIColor.black))
+//        popMenuManager.popMenuAppearance.popMenuPresentationStyle = .cover()
+//
+//        popMenuManager.actions = [
+//            PopMenuDefaultAction(title: "View Score"),
+//            PopMenuDefaultAction(title:"View Squad")
+//        ]
+//
+//        popMenuManager.present(sourceView: moreButton)
     }
     
     func showList(type:String){
@@ -163,7 +163,4 @@ class MatchesCell: UICollectionViewCell {
     
 }
 
-extension MatchesCell:PopMenuViewControllerDelegate{
-    
-}
 

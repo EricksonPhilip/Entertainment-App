@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxSwift
 
 class CricketViewModel {
     
@@ -16,8 +15,6 @@ class CricketViewModel {
     var squadsModel:[SquadsModel] = [SquadsModel]()
     
     let matchServices = ServiceManager()
-    let cellSelectedEvent = PublishSubject<Void>()
-    let isCellSelectedEvent = Variable<Bool>(false)
 
     func getNewMatches(completed:@escaping (Bool) -> ()){
         matchServices.CricketServicesGET(STRURL: cricketNewMatchesURL){
