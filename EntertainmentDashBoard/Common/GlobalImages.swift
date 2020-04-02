@@ -34,5 +34,10 @@ struct globalColor {
                                                green: (32/255.0),
                                                blue: (32/255.0),
                                                alpha: 1.0)
+    
+    public static var commonBGKColor = UIColor(red: 27/255.0,
+                                                 green: 38/255.0,
+                                                 blue: 44/255.0,
+                                                 alpha: 1.0)
 }
 

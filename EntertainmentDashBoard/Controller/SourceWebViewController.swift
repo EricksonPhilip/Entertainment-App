@@ -39,10 +39,6 @@ class SourceWebViewController: ViewControllerPannable,Storyboarded {
         setUpProgressView()
         setUpWebContentView()
         titleLabel.text = sourceTitle
-        
-
-        
-        
     }
 
     func setUpProgressView(){

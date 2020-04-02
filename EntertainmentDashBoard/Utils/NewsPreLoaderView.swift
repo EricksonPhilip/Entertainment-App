@@ -80,7 +80,7 @@ class NewsPreLoaderView: UIView {
     
     func setStackViewConstraints(){
         addSubview(vStackView)
-        vStackView.topAnchor.constraint(equalTo: topAnchor,constant:70).isActive = true
+        vStackView.topAnchor.constraint(equalTo: topAnchor,constant: 5).isActive = true
         vStackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10).isActive = true
         vStackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10).isActive = true
     }

@@ -8,13 +8,14 @@
 
 import Foundation
 struct NewsModel {
-    let newsId:String!
-    let newsUrl:String!
-    let newsImageUrl:String!
-    let sourceName:String!
-    let newsTitle:String!
-    let newsDesc:String!
-    let newsContent:String!
+    let newsId:String?
+    let newsUrl:String?
+    let newsImageUrl:String?
+    let sourceName:String?
+    let newsTitle:String?
+    let newsDesc:String?
+    let newsContent:String?
+    let newsUrlImage:String?
     
     init(newsId:String,
          newsUrl:String,
@@ -22,7 +23,8 @@ struct NewsModel {
          sourceName:String,
          newsTitle:String,
          newsDesc:String,
-        newsContent:String) {
+         newsContent:String,
+         newsUrlImage:String) {
         
         self.newsId = newsId
         self.newsUrl = newsUrl
@@ -31,5 +33,6 @@ struct NewsModel {
         self.newsTitle = newsTitle
         self.newsDesc = newsDesc
         self.newsContent = newsContent
+        self.newsUrlImage = newsUrlImage
     }
 }

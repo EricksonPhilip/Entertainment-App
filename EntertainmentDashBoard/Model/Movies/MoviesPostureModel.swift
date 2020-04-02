@@ -13,17 +13,20 @@ struct MoviesPostureModel{
     let movieOverView:String!
     let posterPath:String!
     let backDropPath:String!
+    let voteAvg:Float!
     
     init(movieId:Int,
          posterPath:String,
          movieName:String,
          movieOverView:String,
-         backDropPath:String){
+         backDropPath:String,
+         voteAvg:Float){
         
         self.movieId = movieId
         self.movieName = movieName
         self.posterPath = posterPath
         self.movieOverView = movieOverView
         self.backDropPath = backDropPath
+        self.voteAvg = voteAvg
     }
 }

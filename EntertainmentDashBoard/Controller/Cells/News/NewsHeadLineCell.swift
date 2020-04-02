@@ -85,19 +85,19 @@ class NewsHeadLineCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+
     func setUp(){
         backgroundColor = UIColor(red: 27/255.0, green: 38/255.0, blue: 44/255.0, alpha: 1.0)
         setStackViewConstraints()
         addControlsToStackView()
     }
     
-    
 
     func setStackViewConstraints(){
         contentView.addSubview(stackView)
         stackView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
@@ -106,7 +106,7 @@ class NewsHeadLineCell: UITableViewCell {
         stackView.addArrangedSubview(imgView)
         stackView.addArrangedSubview(desc)
         stackView.addArrangedSubview(readMore)
-        stackView.addArrangedSubview(spacerView)
+        //stackView.addArrangedSubview(spacerView)
         
         title.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
         title.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
@@ -120,10 +120,7 @@ class NewsHeadLineCell: UITableViewCell {
         readMore.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
         readMore.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true
         
-        spacerView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
-        
         imgView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        spacerView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     func setSpacerViewWidth(width:CGFloat){
@@ -133,16 +130,29 @@ class NewsHeadLineCell: UITableViewCell {
     func populate(model:NewsModel){
         title.text = model.newsTitle
         desc.text = model.newsDesc
-        setImageUrl(imageUrl: model.newsImageUrl)
+        setImageUrl(imageUrl: model.newsImageUrl!)
     }
     
     private func setImageUrl(imageUrl:String){
         let url = URL(string: imageUrl)
-        imgView.sd_setImage(with: url)
+        imgView.sd_setImage(with: url,placeholderImage:UIImage(named: "ImagePlaceholder"))
     }
 
     @objc
     func readMoreButtonAction(){
         delegate?.readMoreTapped(cell: self)
     }
+    
+    ////Later use
+    func shrink(down:Bool,cell:NewsHeadLineCell){
+        UIView.animate(withDuration: 0.6) {
+            if down {
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            else{
+                cell.transform = .identity
+            }
+        }
+    }
+
 }

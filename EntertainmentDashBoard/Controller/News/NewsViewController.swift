@@ -22,7 +22,8 @@ class NewsViewController: UIViewController {
         tblView.tableFooterView = UIView()
         _view = NewsPreLoaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         tblView.backgroundView = _view
-        tblView.separatorStyle = .none
+        tblView.separatorStyle = .singleLine
+        tblView.separatorColor = .white
         return tblView
     }()
     
@@ -34,6 +35,7 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "News"
         setUpTableView()
         getTopHeadLines()
     }
@@ -98,48 +100,7 @@ extension NewsViewController:UITableViewDataSource{
         
         cell.selectionStyle = .none
         
-        cell.setSpacerViewWidth(width: tableView.frame.width)
-        
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(origin: CGPoint.zero,
-                                              size: CGSize(width: tableView.frame.width,
-                                                           height: 60)))
-        
-        let closeButton = UIButton(frame: .zero)
-        let closeImage = UIImage(named: "close")?.withRenderingMode(.alwaysTemplate)
-        closeButton.setImage(closeImage, for: .normal)
-        closeButton.tintColor = .white
-        closeButton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        headerView.addSubview(closeButton)
-        closeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        closeButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        closeButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -5).isActive = true
-        closeButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
-        
-        
-        headerView.backgroundColor = .darkGray
-
-        let label = UILabel()
-        label.frame = CGRect(x: 5, y: 5,
-                             width: headerView.frame.width-10,
-                             height: headerView.frame.height-10)
-        label.text = "News"
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor = .white
-
-        headerView.addSubview(label)
-
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
     }
 }
 
@@ -154,15 +115,14 @@ extension NewsViewController:cellReadMoreDelegate{
         if let indexPath = tableView.indexPath(for: cell){
              let model = viewModel.model[indexPath.row]
             
-            //fullNewsViewController.urlString = model.newsUrl
-            
             let storyboard = UIStoryboard(name: "EntertainmentBoard", bundle: nil)
-            let NewsSource = storyboard.instantiateViewController(withIdentifier: "SourceWebViewController") as! SourceWebViewController
             
-            NewsSource.urlString = model.newsUrl
-            NewsSource.sourceTitle = model.sourceName
-            
-            self.present(NewsSource, animated: true, completion: nil)
+            if let NewsSource = storyboard.instantiateViewController(withIdentifier: "SourceWebViewController") as? SourceWebViewController{
+                NewsSource.urlString = model.newsUrl
+                NewsSource.sourceTitle = model.sourceName
+                
+                self.present(NewsSource, animated: true, completion: nil)
+            }
         }
     }
 

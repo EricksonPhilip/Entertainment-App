@@ -35,6 +35,8 @@ public let moviesUpcomingUrl = "https://api.themoviedb.org/3/movie/upcoming?api_
 public let moviePosterBaseUrl = "http://image.tmdb.org/t/p/w500/"
 public let movieBackDropBaseUrl = "http://image.tmdb.org/t/p/w780/"
 
+public let movievLargeBackDropUrl = "http://image.tmdb.org/t/p/w1280/"
+
 public let popularTVUrl = "https://api.themoviedb.org/3/tv/popular?page=1&language=en-US&api_key=14264aed83f07b9301a1ac16e7a23325"
 
 //MARK: Music

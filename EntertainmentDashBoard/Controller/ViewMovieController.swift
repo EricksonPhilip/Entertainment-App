@@ -24,7 +24,7 @@ class ViewMovieController: UIViewController {
     lazy var navigationView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .darkGray
+        view.backgroundColor = globalColor.commonBGKColor
         return view
     }()
     

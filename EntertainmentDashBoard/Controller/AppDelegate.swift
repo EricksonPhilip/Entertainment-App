@@ -16,16 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+       
         let navigationBarAppearace = UINavigationBar.appearance()
 
-        navigationBarAppearace.tintColor = .black
-        navigationBarAppearace.barTintColor = .black
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = globalColor.commonBGKColor
         
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
-        navigationBarAppearace.prefersLargeTitles = true
-       
         return true
     }
 

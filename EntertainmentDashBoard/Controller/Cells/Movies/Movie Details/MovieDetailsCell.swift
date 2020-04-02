@@ -13,6 +13,7 @@ class MovieDetailsCell: UICollectionViewCell {
     @IBOutlet weak var overViewHeaderLabel: UILabel!
     @IBOutlet weak var overViewContentLabel: UILabel!
     override func awakeFromNib() {
+        backgroundColor = globalColor.commonBGKColor
     }
     
     func populate(overView:String){

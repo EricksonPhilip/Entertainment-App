@@ -175,7 +175,7 @@ class MovieCell: UICollectionViewCell {
     func getNowPlayingMovies(pageNo:Int){
         viewModel.getNowPlaying(pageNo:String(pageNo)){[weak self] success in
             DispatchQueue.main.async {
-                if success{
+                if success > 0{
                     self!.pageControl.numberOfPages = self!.viewModel.numberOfPostures()
                     self!.movieCollectionView.reloadData()
                 }

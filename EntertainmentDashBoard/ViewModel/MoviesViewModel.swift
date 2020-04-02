@@ -34,7 +34,8 @@ class MoviesViewModel{
                                                       posterPath: postureUrl,
                                                       movieName: name,
                                                       movieOverView: movieOverView,
-                                                      backDropPath: backDropUrl)
+                                                      backDropPath: backDropUrl,
+                                                      voteAvg: .zero)
                 
                 self.model.append(postureModel)
                 
@@ -62,7 +63,8 @@ class MoviesViewModel{
                                                   posterPath: postureUrl,
                                                   movieName: name,
                                                   movieOverView: movieOverView,
-                                                  backDropPath: backDropUrl)
+                                                  backDropPath: backDropUrl,
+                                                  voteAvg: .zero)
             
             self.model.append(postureModel)            
             completed(true)
@@ -91,7 +93,8 @@ class MoviesViewModel{
                                                       posterPath: postureUrl,
                                                       movieName: name,
                                                       movieOverView: movieOverView,
-                                                      backDropPath: backDropUrl)
+                                                      backDropPath: backDropUrl,
+                                                      voteAvg: .zero)
                 
                 self.model.append(postureModel)
                 
@@ -101,7 +104,7 @@ class MoviesViewModel{
         }
     }
     
-    func getNowPlaying(pageNo:String,completed:@escaping (Bool) -> ()){
+    func getNowPlaying(pageNo:String,completed:@escaping (Int) -> ()){
         moviesPostureServices.servicesGET(STRURL: moviesNowPlayingUrl + pageNo){
             response,error in
             
@@ -111,6 +114,8 @@ class MoviesViewModel{
             
             let posturesTempArray = response!["results"]
             
+            let numberOfPages = response!["total_pages"] as! Int
+            
             for posture in posturesTempArray as! [AnyObject] {
                 
                 let id = posture["id"] as! Int
@@ -118,18 +123,20 @@ class MoviesViewModel{
                 let backDropUrl = posture["backdrop_path"] as? String ?? "NIL"
                 let name = posture["original_title"] as? String ?? "NR"
                 let movieOverView = posture["overview"] as? String ?? "NIL"
+                let movieRating = posture["vote_average"] as? Float ?? 0.0
                 
                 let postureModel = MoviesPostureModel(movieId: id,
                                                       posterPath: postureUrl,
                                                       movieName: name,
                                                       movieOverView: movieOverView,
-                                                      backDropPath: backDropUrl)
+                                                      backDropPath: backDropUrl,
+                                                      voteAvg: movieRating)
                 
                 self.model.append(postureModel)
                 
             }
             
-            completed(true)
+            completed(numberOfPages)
         }
     }
     
@@ -155,7 +162,8 @@ class MoviesViewModel{
                                                       posterPath: postureUrl,
                                                       movieName: name,
                                                       movieOverView: movieOverView,
-                                                      backDropPath: backDropUrl)
+                                                      backDropPath: backDropUrl,
+                                                      voteAvg: .zero)
                 
                 self.model.append(postureModel)
                 

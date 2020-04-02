@@ -26,7 +26,7 @@ class NewsListCell: UICollectionViewCell {
     }
     
     public func populate(model:NewsModel){
-        setImageUrl(imageUrl: model.newsImageUrl)
+        setImageUrl(imageUrl: model.newsImageUrl!)
         self.titleLabel.text = model.newsTitle
     }
     
