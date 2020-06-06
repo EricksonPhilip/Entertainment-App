@@ -23,17 +23,7 @@ class SourceWebViewController: ViewControllerPannable,Storyboarded {
     public var sourceTitle:String?
     
     var coordinator:MusicCoordinator?
-    
-//    convenience init(url:String,title:String) {
-//        self.urlString = url
-//        self.sourceTitle = title
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpProgressView()

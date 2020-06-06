@@ -174,7 +174,7 @@ extension ViewMovieController:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        let sectionHeight:CGFloat = section == 1 ? 210 : 210
+        let sectionHeight:CGFloat = section == 1 ? 300 : 300
         return CGSize(width: self.view.bounds.width, height: sectionHeight)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

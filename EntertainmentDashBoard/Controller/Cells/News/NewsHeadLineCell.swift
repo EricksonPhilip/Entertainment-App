@@ -106,7 +106,6 @@ class NewsHeadLineCell: UITableViewCell {
         stackView.addArrangedSubview(imgView)
         stackView.addArrangedSubview(desc)
         stackView.addArrangedSubview(readMore)
-        //stackView.addArrangedSubview(spacerView)
         
         title.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5).isActive = true
         title.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5).isActive = true

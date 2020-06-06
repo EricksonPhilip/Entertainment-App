@@ -13,6 +13,7 @@ class PagingNumberView: UIView {
     lazy var scrollView:UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
 
@@ -36,6 +37,8 @@ class PagingNumberView: UIView {
             addLabelsToStackView()
         }
     }
+    
+    var paginButtonArray:[PagingButton] = [PagingButton]()
     
     public var pageTapAction:((Int)->Void)?
     
@@ -77,7 +80,7 @@ class PagingNumberView: UIView {
         }
         
         for i in 0...numberArray.count-1{
-            let numberLabel = UIButton()
+            let numberLabel = PagingButton()
             numberLabel.setTitle(numberArray[i], for: .normal)
             numberLabel.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
             numberLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -85,6 +88,8 @@ class PagingNumberView: UIView {
             numberLabel.tag = i
             styleNumberLabel(numberLabel)
             hStackView.addArrangedSubview(numberLabel)
+            
+            paginButtonArray.append(numberLabel)
         }
     }
     
@@ -95,6 +100,15 @@ class PagingNumberView: UIView {
     
     @objc func numberTapped(_ sender:UIButton){
         if let tapAction = pageTapAction{
+            
+            paginButtonArray.forEach { $0.isSelected = false
+                $0.backgroundColor = globalColor.cellBackground
+            }
+
+            paginButtonArray[sender.tag].backgroundColor = .lightGray
+            paginButtonArray[sender.tag].isSelected = true
+            
+    
             tapAction(sender.tag+1)
         }
     }

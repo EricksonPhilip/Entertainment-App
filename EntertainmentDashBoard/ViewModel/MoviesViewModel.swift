@@ -11,6 +11,64 @@ class MoviesViewModel{
     var model:[MoviesPostureModel] = [MoviesPostureModel]()
     let moviesPostureServices = ServiceManager()
     
+    
+    func getMovies(variant:MovieTypeList,
+                   pageNo:String,
+                   completed:@escaping (Int) -> ()){
+        
+        var movieUrl = ""
+        
+        switch variant{
+            case .popular:
+                movieUrl = moviesPopularUrl + pageNo
+            case .latest:
+                movieUrl = moviesLatestUrl
+            case .topRated:
+                movieUrl = moviesTopRatedUrl + pageNo
+            case .nowPlaying:
+                movieUrl = moviesNowPlayingUrl + pageNo
+            case .upcoming:
+                movieUrl = moviesUpcomingUrl + pageNo
+        }
+        
+        moviesPostureServices.servicesGET(STRURL: movieUrl){
+            response,error in
+            
+            guard response != nil && error == nil else {
+                print("Response Empty")
+                return
+            }
+            
+            let posturesTempArray = response!["results"]
+            
+            if let numberOfPages = response!["total_pages"] as? Int{
+                for posture in posturesTempArray as! [AnyObject] {
+                    
+                    let id = posture["id"] as! Int
+                    let postureUrl = posture["poster_path"] as? String ?? "NA"
+                    let backDropUrl = posture["backdrop_path"] as? String ?? "NA"
+                    let name = posture["original_title"] as? String ?? "NA"
+                    let movieOverView = posture["overview"] as? String ?? "NA"
+                    let movieRating = posture["vote_average"] as? Float ?? .zero
+                    
+                    let postureModel = MoviesPostureModel(movieId: id,
+                                                          posterPath: postureUrl,
+                                                          movieName: name,
+                                                          movieOverView: movieOverView,
+                                                          backDropPath: backDropUrl,
+                                                          voteAvg: movieRating)
+                    
+                    self.model.append(postureModel)
+                    
+                }
+                completed(numberOfPages)
+            }
+            
+            completed(.zero)
+        }
+        
+    }
+    
     func getPopularMoviesPostures(pageNo:String,completed:@escaping (Bool) -> ()){
         
         moviesPostureServices.servicesGET(STRURL: moviesPopularUrl + pageNo){

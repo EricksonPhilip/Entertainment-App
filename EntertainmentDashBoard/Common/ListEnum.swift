@@ -27,5 +27,22 @@ public enum MovieTypeList:String{
     case upcoming = "Upcoming"
     
     
-    static let lists = [popular, topRated, nowPlaying,upcoming,latest]
+    static let lists:[String] = [popular.rawValue, topRated.rawValue, nowPlaying.rawValue,upcoming.rawValue,latest.rawValue]
+    
+    func get()->String{
+        switch self {
+        case .popular:
+            return "Popular"
+        case .latest:
+            return "latest"
+        case .nowPlaying:
+            return "Now Playing"
+        case .topRated:
+            return "Top Rated"
+        case .upcoming:
+            return "Upcoming"
+
+        }
+    }
+
 }

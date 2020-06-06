@@ -11,6 +11,7 @@ enum variant{
     case news
     case movies
     case tvShows
+    case music
     case cricket
     case settings
 }

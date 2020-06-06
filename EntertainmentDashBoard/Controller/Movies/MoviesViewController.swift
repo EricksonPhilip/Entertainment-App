@@ -34,9 +34,13 @@ class MoviesViewController: UIViewController {
     
     var numberArray:[String] = [String]()
     
-    var currPage:Int = 0
+    var currPage:Int = 1
+    
+    var currVariant:MovieTypeList = .nowPlaying
     
     private let refreshControl = UIRefreshControl()
+    
+    var pagingViewHeightConst:NSLayoutConstraint?
 
    
     override func viewDidLoad() {
@@ -47,7 +51,7 @@ class MoviesViewController: UIViewController {
         addRefreshControl()
         setPaginViewConstraints()
         setCollectionViewConstraint()
-        getNowPlayingMovies(pageNo: 1,isTapped: false)
+        getMovies(variant: .nowPlaying, pageNo: 1)
         handlePageTapped()
     }
     
@@ -72,7 +76,7 @@ class MoviesViewController: UIViewController {
     }
     
     @objc private func refreshMovieData(_ sender: Any) {
-       getNowPlayingMovies(pageNo: currPage, isTapped: true)
+        getMovies(variant: currVariant, pageNo: currPage)
     }
     
     @objc func titleViewTapped(){
@@ -80,25 +84,24 @@ class MoviesViewController: UIViewController {
         
         let optionsController = PopUpViewController()
         optionsController.modalPresentationStyle = .overFullScreen
-        optionsController.arrayOptions = ["Now Playing","Latest","Most Popular","Most Rated"]
+        optionsController.arrayOptions =  MovieTypeList.lists
     
         present(optionsController, animated: true, completion: nil)
         
-        optionsController.dismissAction = { [weak self] selectedValue in
-            guard let strongSelf = self else{
+        optionsController.didTappedAction = { [weak self] movieType in
+            guard let this = self else{
                 return
             }
             
-            if optionsController.arrayOptions.indices.contains(selectedValue){
-                strongSelf.discoverTitleView.setTitle(optionsController.arrayOptions[selectedValue], for: .normal)
-            }
+            this.getMovies(variant: movieType, pageNo: this.currPage)
+           
+            this.view.alpha = 1
+            
+            this.discoverTitleView.setTitle(movieType.get(), for: .normal)
             
             DispatchQueue.main.async {
-                strongSelf.dismiss(animated: true, completion: nil)
+                this.dismiss(animated: true, completion: nil)
             }
-            
-            
-            strongSelf.view.alpha = 1
         }
         
         
@@ -121,7 +124,9 @@ class MoviesViewController: UIViewController {
         pagingNumberView.topAnchor.constraint(equalTo: layOut.topAnchor,constant: 10).isActive = true
         pagingNumberView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pagingNumberView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        pagingNumberView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        pagingViewHeightConst = pagingNumberView.heightAnchor.constraint(equalToConstant: 60)
+        pagingViewHeightConst?.isActive = true
     }
     
     func setCollectionViewConstraint(){
@@ -132,29 +137,43 @@ class MoviesViewController: UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    func beginRefreshingControl(){
+        self.collectionView.setContentOffset(CGPoint(x: .zero,
+                                                     y: -self.refreshControl.frame.size.height),
+                                             animated: true)
+        self.refreshControl.beginRefreshing()
     
-    func getNowPlayingMovies(pageNo:Int,isTapped:Bool){
-        if isTapped{
-            viewModel.model = [MoviesPostureModel]()
-        }
-        viewModel.getNowPlaying(pageNo:String(pageNo)){[weak self] pages in
+    }
+    
+    func getMovies(variant:MovieTypeList,pageNo:Int){
+        viewModel.model = [MoviesPostureModel]()
+        
+        beginRefreshingControl()
+        
+        viewModel.getMovies(variant: variant, pageNo: String(pageNo)){ [weak self] pages in
             guard let this = self else{
                 return
             }
+
             DispatchQueue.main.async {
-                if !isTapped{
+                
+                if pages > 0{
                     this.appendTotalPagesToArray(val: pages)
                 }
                 
                 this.collectionView.reloadData()
-                this.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+                this.collectionView.scrollToItem(at: IndexPath(item: .zero, section: .zero), at: .top, animated: true)
                 this.refreshControl.endRefreshing()
+                
+                this.currVariant = variant
+                
             }
-            
         }
     }
     
+
     func appendTotalPagesToArray(val:Int){
+        numberArray = [String]()
         for i in 1...val{
             numberArray.append(String(i))
         }
@@ -162,16 +181,12 @@ class MoviesViewController: UIViewController {
     }
     
     func handlePageTapped(){
-        
-        collectionView.setContentOffset(CGPoint(x: 0, y: -refreshControl.frame.size.height), animated: true)
-        refreshControl.beginRefreshing()
-        
         pagingNumberView.pageTapAction = {[weak self] number in
             guard let this = self else{
                 return
             }
             
-            this.getNowPlayingMovies(pageNo: number,isTapped: true)
+            this.getMovies(variant: this.currVariant, pageNo: number)
 
             this.currPage = number
         }
@@ -187,10 +202,11 @@ extension MoviesViewController:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoviesViewCell.movieCellID,
                                                       for: indexPath) as! MoviesViewCell
         
-        let model = viewModel.model[indexPath.row]
-        
-        cell.populate(model: model)
-        
+        if viewModel.model.indices.contains(indexPath.row){
+            let model = viewModel.model[indexPath.row]
+            cell.populate(model: model)
+        }
+           
         return cell
     }
     

@@ -26,8 +26,8 @@ class PopUpViewController: UIViewController {
     
     var tableViewHeightConst:NSLayoutConstraint?
     
-    var dismissAction:((Int)->Void)?
-    
+    var didTappedAction:((MovieTypeList)->Void)?
+        
     var rowHeight:CGFloat{
         return 60
     }
@@ -88,7 +88,7 @@ extension PopUpViewController:UITableViewDataSource{
         let cancelButton:UIButton = UIButton(frame: hView.frame)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(.red, for: .normal)
-        cancelButton.addTarget(self, action: #selector(dismissController(_:)), for: .touchUpInside)
+        //cancelButton.addTarget(self, action: #selector(dismissController(_:)), for: .touchUpInside)
         hView.addSubview(cancelButton)
         
         return hView
@@ -105,12 +105,31 @@ extension PopUpViewController:UITableViewDataSource{
 
 extension PopUpViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismissController(indexPath.row)
+        
+        let row = indexPath.row
+        var variant:MovieTypeList = .nowPlaying
+        
+        switch row{
+        case 0:
+            variant = .popular
+        case 1:
+            variant = .topRated
+        case 2:
+            variant = .nowPlaying
+        case 3:
+            variant = .upcoming
+        case 4:
+            variant = .latest
+        default:
+            variant = .nowPlaying
+        }
+        
+        handleTappedAction(variant)
     }
     
-    @objc func dismissController(_ val:Int){
-        if let dismissOption = dismissAction{
-            dismissOption(val)
+    func handleTappedAction(_ variant:MovieTypeList){
+        if let tappedOption = didTappedAction{
+            tappedOption(variant)
         }
     }
 }

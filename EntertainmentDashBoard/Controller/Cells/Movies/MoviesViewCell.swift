@@ -130,7 +130,7 @@ class MoviesViewCell: UICollectionViewCell {
     func populate(model:MoviesPostureModel){
         let fullUrl = moviePosterBaseUrl + model.posterPath
         let urlPosture = URL(string: fullUrl)
-        imgView.sd_setImage(with: urlPosture)
+        imgView.sd_setImage(with: urlPosture,placeholderImage:UIImage(named: "ImagePlaceholder"))
         nameLabel.text = model.movieName
         ratingLabel.text = String(model.voteAvg)
     }

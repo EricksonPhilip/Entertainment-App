@@ -83,9 +83,12 @@
 		45D1A5CC224065220015A396 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CB224065220015A396 /* Storyboarded.swift */; };
 		45D1A5CF224065A80015A396 /* MusicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1A5CE224065A80015A396 /* MusicCoordinator.swift */; };
 		A71F129224355437006464AE /* PagingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F129124355437006464AE /* PagingNumberView.swift */; };
+		A73904482436B61A0015F63D /* API-URL.plist in Resources */ = {isa = PBXBuildFile; fileRef = A73904472436B61A0015F63D /* API-URL.plist */; };
+		A739044A2436C32E0015F63D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73904492436C32E0015F63D /* UIButton+Extension.swift */; };
+		A739044C243A660B0015F63D /* CricketMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739044B243A660B0015F63D /* CricketMatchesView.swift */; };
 		A79FF2C524316DC200A53330 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2C424316DC200A53330 /* DiscoverView.swift */; };
 		A79FF2C724317C4D00A53330 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2C624317C4D00A53330 /* UIViewController+Extension.swift */; };
-		A79FF2C924318BF300A53330 /* UIButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2C824318BF200A53330 /* UIButtonWithImage.swift */; };
+		A79FF2C924318BF300A53330 /* PagingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2C824318BF200A53330 /* PagingButton.swift */; };
 		A79FF2CB2433F89B00A53330 /* PopOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2CA2433F89B00A53330 /* PopOptionsView.swift */; };
 		A79FF2CF2433FCEC00A53330 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2CE2433FCEC00A53330 /* OptionsCell.swift */; };
 		A79FF2D12434020000A53330 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79FF2D02434020000A53330 /* PopUpViewController.swift */; };
@@ -101,6 +104,7 @@
 		A7A97A7C24212E98007AA0B0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A7A97A7B24212E98007AA0B0 /* SDWebImage */; };
 		A7A97A7E2425AD5C007AA0B0 /* DashBoardVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A7D2425AD5C007AA0B0 /* DashBoardVariant.swift */; };
 		A7A97A81243012BC007AA0B0 /* TvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A97A80243012BC007AA0B0 /* TvViewController.swift */; };
+		A7FFC9FD2442BC0000FE1380 /* ImageWithCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFC9FC2442BC0000FE1380 /* ImageWithCaptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,9 +207,12 @@
 		45D1A5CB224065220015A396 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		45D1A5CE224065A80015A396 /* MusicCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCoordinator.swift; sourceTree = "<group>"; };
 		A71F129124355437006464AE /* PagingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingNumberView.swift; sourceTree = "<group>"; };
+		A73904472436B61A0015F63D /* API-URL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "API-URL.plist"; sourceTree = "<group>"; };
+		A73904492436C32E0015F63D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		A739044B243A660B0015F63D /* CricketMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketMatchesView.swift; sourceTree = "<group>"; };
 		A79FF2C424316DC200A53330 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		A79FF2C624317C4D00A53330 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		A79FF2C824318BF200A53330 /* UIButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithImage.swift; sourceTree = "<group>"; };
+		A79FF2C824318BF200A53330 /* PagingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingButton.swift; sourceTree = "<group>"; };
 		A79FF2CA2433F89B00A53330 /* PopOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOptionsView.swift; sourceTree = "<group>"; };
 		A79FF2CE2433FCEC00A53330 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		A79FF2D02434020000A53330 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +227,7 @@
 		A7A97A75241E8959007AA0B0 /* MoviesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewCell.swift; sourceTree = "<group>"; };
 		A7A97A7D2425AD5C007AA0B0 /* DashBoardVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardVariant.swift; sourceTree = "<group>"; };
 		A7A97A80243012BC007AA0B0 /* TvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvViewController.swift; sourceTree = "<group>"; };
+		A7FFC9FC2442BC0000FE1380 /* ImageWithCaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithCaptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +291,7 @@
 				076420D021E8272D00D6F2D2 /* Common */,
 				076420C521E81E3700D6F2D2 /* Support */,
 				0741F75421E80A56008C4C9F /* Info.plist */,
+				A73904472436B61A0015F63D /* API-URL.plist */,
 			);
 			path = EntertainmentDashBoard;
 			sourceTree = "<group>";
@@ -615,6 +624,7 @@
 				4596C7EF223AE7B7001FB675 /* UIAlertController+Extension.swift */,
 				4596C7F1223AED19001FB675 /* UIColor+Extension.swift */,
 				A7A97A7D2425AD5C007AA0B0 /* DashBoardVariant.swift */,
+				A73904492436C32E0015F63D /* UIButton+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -697,6 +707,8 @@
 			children = (
 				A7A97A252415DF11007AA0B0 /* DashBoardCell.swift */,
 				A7A97A2C241733EB007AA0B0 /* HeaderDashBoardView.swift */,
+				A739044B243A660B0015F63D /* CricketMatchesView.swift */,
+				A7FFC9FC2442BC0000FE1380 /* ImageWithCaptionView.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -725,7 +737,7 @@
 				A79FF2CC2433FCA000A53330 /* PopUpOptions */,
 				A7A97A34241B0589007AA0B0 /* NewsPreLoaderView.swift */,
 				A79FF2C424316DC200A53330 /* DiscoverView.swift */,
-				A79FF2C824318BF200A53330 /* UIButtonWithImage.swift */,
+				A79FF2C824318BF200A53330 /* PagingButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -884,6 +896,7 @@
 				074CE135220DE1A900BE3A07 /* PopularTVCell.xib in Resources */,
 				076420B621E8158200D6F2D2 /* WeatherCell.xib in Resources */,
 				07FCD83321EAB49800C8B0EF /* CricketCell.xib in Resources */,
+				A73904482436B61A0015F63D /* API-URL.plist in Resources */,
 				076420B021E8143A00D6F2D2 /* MovieCell.xib in Resources */,
 				0741F74B21E80A53008C4C9F /* EntertainmentBoard.storyboard in Resources */,
 			);
@@ -962,6 +975,7 @@
 				A79FF2D12434020000A53330 /* PopUpViewController.swift in Sources */,
 				A7A97A232415BFE6007AA0B0 /* NewDashBoardControllerViewController.swift in Sources */,
 				0741F74821E80A53008C4C9F /* DashBoardController.swift in Sources */,
+				A739044A2436C32E0015F63D /* UIButton+Extension.swift in Sources */,
 				074CE12C220C82A700BE3A07 /* ViewControllerPannable.swift in Sources */,
 				A7A97A2B2415EED9007AA0B0 /* UIButtonExtension.swift in Sources */,
 				074CE16F222D9B8600BE3A07 /* MusicTopTracksCell.swift in Sources */,
@@ -989,12 +1003,14 @@
 				4596C7F0223AE7B7001FB675 /* UIAlertController+Extension.swift in Sources */,
 				07FCD83121EAAA6A00C8B0EF /* DashBoardModel.swift in Sources */,
 				076420CF21E8264800D6F2D2 /* WeatherModel.swift in Sources */,
+				A7FFC9FD2442BC0000FE1380 /* ImageWithCaptionView.swift in Sources */,
 				45672C652232F4CB004D49DE /* SquadsCell.swift in Sources */,
 				07FCD83521EAB4C400C8B0EF /* CricketCell.swift in Sources */,
 				074CE16D2229BE8300BE3A07 /* ArtistCollectionCell.swift in Sources */,
 				074CE13F221319CF00BE3A07 /* Utilities.swift in Sources */,
 				076420D221E8275600D6F2D2 /* API.swift in Sources */,
 				07FCD84421EF88FA00C8B0EF /* HalfSheetController.swift in Sources */,
+				A739044C243A660B0015F63D /* CricketMatchesView.swift in Sources */,
 				074CE1682229B60D00BE3A07 /* MusicViewModel.swift in Sources */,
 				074CE139220DE71000BE3A07 /* PopularTVModel.swift in Sources */,
 				A7A97A262415DF11007AA0B0 /* DashBoardCell.swift in Sources */,
@@ -1002,7 +1018,7 @@
 				076420CB21E8262C00D6F2D2 /* TvModel.swift in Sources */,
 				4596C7EC223AD168001FB675 /* UIViewContoller+Extension.swift in Sources */,
 				A7A97A35241B0589007AA0B0 /* NewsPreLoaderView.swift in Sources */,
-				A79FF2C924318BF300A53330 /* UIButtonWithImage.swift in Sources */,
+				A79FF2C924318BF300A53330 /* PagingButton.swift in Sources */,
 				076420B821E815AE00D6F2D2 /* TvCell.swift in Sources */,
 				45D1A5CA224027FE0015A396 /* Coordinator.swift in Sources */,
 				A7A97A2D241733EB007AA0B0 /* HeaderDashBoardView.swift in Sources */,
