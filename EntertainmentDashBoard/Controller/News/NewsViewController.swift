@@ -32,12 +32,15 @@ class NewsViewController: UIViewController {
     var currentlySelectedCellIndexPath: IndexPath?
     
     var fullNewsViewController:SourceWebViewController = SourceWebViewController()
+    
+    var selectedImage:Int = .zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "News"
         setUpTableView()
         getTopHeadLines()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,13 +68,15 @@ class NewsViewController: UIViewController {
     
     func getTopHeadLines(){
         viewModel.getTopHeadLines(){[weak self] success in
-            guard let strongSelf = self else{
+            guard let this = self else{
                 return
             }
             DispatchQueue.main.async {
                 if success{
-                    strongSelf.tableView.backgroundView = UIView()
-                    strongSelf.tableView.reloadData()
+                    this.tableView.backgroundView = UIView()
+                    this.tableView.reloadData()
+                    let selectedIndexPath = IndexPath(row: this.selectedImage, section: 0)
+                    this.tableView.scrollToRow(at: selectedIndexPath, at: .top, animated: true)
                 }
             }
         }

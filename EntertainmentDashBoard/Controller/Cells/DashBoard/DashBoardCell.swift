@@ -27,6 +27,7 @@ class DashBoardCell: UICollectionViewCell {
     
     var nextButtonWidthConst:NSLayoutConstraint?
     
+    var selectedImage:Int = .zero
    
     
     lazy var scrollView:UIScrollView = {
@@ -184,13 +185,6 @@ class DashBoardCell: UICollectionViewCell {
             
             imageViews[i].heightAnchor.constraint(equalToConstant: 300).isActive = true
             imageViews[i].widthAnchor.constraint(equalToConstant: bounds.width-10).isActive = true
-            
-            imageViews[i].isUserInteractionEnabled = true
-            
-            let tapGesture = UITapGestureRecognizer()
-            tapGesture.numberOfTapsRequired = 1
-            tapGesture.addTarget(self, action: #selector(tapped))
-            imageViews[i].addGestureRecognizer(tapGesture)
         }
     }
     
@@ -213,6 +207,7 @@ class DashBoardCell: UICollectionViewCell {
     }
     
     @objc func nextSlide(_ sender:UIButton){
+        selectedImage += 1
         let scrollWidth = bounds.width-10
         let currentXOffset = scrollView.contentOffset.x
         
@@ -241,6 +236,7 @@ class DashBoardCell: UICollectionViewCell {
     }
     
     @objc func previousSlide(_ sender:UIButton){
+        selectedImage -= 1
         let scrollWidth = bounds.width-10
         let currentXOffset = scrollView.contentOffset.x
         

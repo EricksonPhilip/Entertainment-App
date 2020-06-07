@@ -28,6 +28,8 @@ class MoviesViewController: UIViewController {
     }()
    
 
+    var selectedImage:Int = .zero
+    
     var viewModel:MoviesViewModel = MoviesViewModel()
     
     var discoverTitleView:UIButton = UIButton()
@@ -53,6 +55,10 @@ class MoviesViewController: UIViewController {
         setCollectionViewConstraint()
         getMovies(variant: .nowPlaying, pageNo: 1)
         handlePageTapped()
+        
+        let selectedIndexPath = IndexPath(item: selectedImage, section: 0)
+        
+        collectionView.scrollToItem(at: selectedIndexPath, at: .bottom, animated: true)
     }
     
     func addDiscoverViewNavigationBar(){

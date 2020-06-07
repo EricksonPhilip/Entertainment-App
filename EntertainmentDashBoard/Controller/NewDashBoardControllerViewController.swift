@@ -125,7 +125,8 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
         }
        
         cell.populate()
-       
+        
+    
         cell.seeMoreActionHandler = { [weak self] in
             guard let this = self else{
                 return
@@ -138,14 +139,21 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
         
         return cell
     }
+    
+    @objc func imageTapped(_ sender:UITapGestureRecognizer){
+        print("selected")
+    }
 }
 
 extension NewDashBoardControllerViewController:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! DashBoardCell
+        
         switch modelDashBoard[indexPath.row].title {
         case "News":
-            let controller = NewsViewController() 
+            let controller = NewsViewController()
+            controller.selectedImage = cell.selectedImage
             self.navigationController?.pushViewController(controller, animated: true)
         case "Movies":
             let controller = MoviesViewController()
