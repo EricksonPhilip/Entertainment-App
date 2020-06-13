@@ -32,7 +32,7 @@ class NewDashBoardControllerViewController: UIViewController {
 
     lazy var dashBoardView :UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.view.frame.width, height: 300)
+        layout.itemSize =  CGSize(width: self.view.frame.width, height: 300)
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         
@@ -180,7 +180,7 @@ extension NewDashBoardControllerViewController:UICollectionViewDelegateFlowLayou
         let size:CGFloat = (collectionView.frame.size.width)
         
         if indexPath.row == .zero{
-             return CGSize(width: size, height: 75)
+             return CGSize(width: size, height: 115)
         }else{
              return CGSize(width: size, height: 300)
         }

@@ -32,6 +32,7 @@ class ImageWithCaptionView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
+        stackView.spacing = 5
         return stackView
     }()
     

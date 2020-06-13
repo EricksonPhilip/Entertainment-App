@@ -9,6 +9,8 @@
 
 import Foundation
 public class Covid{
+    public var country:String?
+    public var date:String?
     public var newConfirmed:Int?
     public var totalConfirmed:Int?
     public var newDeaths:Int?
@@ -16,7 +18,9 @@ public class Covid{
     public var newRecovered:Int?
     public var totalRecovered:Int?
     
-    init(newConfirmed:Int,
+    init(country:String?=nil,
+         date:String?=nil,
+         newConfirmed:Int,
          totalConfirmed:Int,
          newDeaths:Int,
          totalDeaths:Int,

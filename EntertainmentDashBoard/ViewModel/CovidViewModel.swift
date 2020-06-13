@@ -22,6 +22,7 @@ class CovidViewModel{
                 return
             }
             
+            let date = response!["Date"]
             let countries = response!["Countries"]
             
             var globalCovid:Covid? = nil
@@ -44,6 +45,8 @@ class CovidViewModel{
             
             for country in countries as! [AnyObject] {
                 
+                let _country = country["Country"] as! String
+                let date = country["Date"] as! String
                 let newConfirmed = country["NewConfirmed"] as! Int
                 let totalConfirmed = country["TotalConfirmed"] as! Int
                 let newDeaths = country["NewDeaths"] as! Int
@@ -51,7 +54,9 @@ class CovidViewModel{
                 let newRecovered = country["NewRecovered"] as! Int
                 let totalRecovered = country["TotalRecovered"] as! Int
                 
-                let covidModel = Covid(newConfirmed: newConfirmed,
+                let covidModel = Covid(country:_country,
+                                       date :date,
+                                       newConfirmed: newConfirmed,
                                        totalConfirmed: totalConfirmed,
                                        newDeaths: newDeaths,
                                        totalDeaths: totalDeaths,

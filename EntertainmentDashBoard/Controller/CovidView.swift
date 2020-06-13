@@ -13,18 +13,22 @@ class CovidView: UIView {
     lazy var stackView:UIStackView = {
         var sv = UIStackView(frame: .zero)
         sv.axis = .vertical
+        sv.spacing = 5
+        sv.alignment = .center
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
     
     lazy var newLabel:UILabel = {
         var label = UILabel(frame: .zero)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var totalLabel:UILabel = {
         var label = UILabel(frame: .zero)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,6 +36,7 @@ class CovidView: UIView {
     lazy var headerLabel:UILabel = {
         var label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
     
@@ -53,6 +58,10 @@ class CovidView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 10
+    }
+    
     func setUp(){
         addSubview(stackView)
         
@@ -65,16 +74,14 @@ class CovidView: UIView {
         stackView.addArrangedSubview(totalLabel)
         stackView.addArrangedSubview(headerLabel)
         
-        newLabel.backgroundColor = .darkGray
         newLabel.textColor = .black
         newLabel.font = UIFont.systemFont(ofSize: 10)
-        newLabel.textAlignment = .right
         newLabel.layer.cornerRadius = 10
         
         totalLabel.textColor = .black
         totalLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        headerLabel.textColor = .cyan
+        headerLabel.textColor = .brown
         
-        headerLabel.font = UIFont.systemFont(ofSize: 8)
+        headerLabel.font = UIFont.systemFont(ofSize: 12)
     }
 }
