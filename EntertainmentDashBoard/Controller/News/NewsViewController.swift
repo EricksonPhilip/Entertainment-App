@@ -85,6 +85,11 @@ class NewsViewController: UIViewController {
     @objc func dismissController(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func viewWillLayoutSubviews() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
 
 }
 

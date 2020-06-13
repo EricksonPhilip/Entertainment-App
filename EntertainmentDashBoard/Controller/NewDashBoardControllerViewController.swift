@@ -16,7 +16,8 @@ class NewDashBoardControllerViewController: UIViewController {
     var newsImages:[String] = [String]()
     var moviesImages:[String] = [String]()
     
-    let modelDashBoard :[(image:String,title:String)] = [(image:"NewsBkgSet",title:"News"),
+    let modelDashBoard :[(image:String,title:String)] = [(image:"NewsBkgSet",title:"Covid"),
+                                                         (image:"NewsBkgSet",title:"News"),
                                                          (image:"Joker4k-1024",title:"Movies"),
                                                          (image:"Friends",title:"TV show"),
                                                          (image:"CricketBkg",title:"Music"),
@@ -49,6 +50,9 @@ class NewDashBoardControllerViewController: UIViewController {
         addRefreshControl()
         
         dashBoardView.reloadData()
+        
+        view.backgroundColor = globalColor.commonBGKColor
+        dashBoardView.backgroundColor = globalColor.commonBGKColor
 
     }
     
@@ -69,6 +73,7 @@ class NewDashBoardControllerViewController: UIViewController {
     
     func registerDashBoardCell(){
         dashBoardView.register(DashBoardCell.self, forCellWithReuseIdentifier: DashBoardCell.dashboardCellID)
+        dashBoardView.register(CovidCell.self, forCellWithReuseIdentifier: CovidCell.cellID)
         dashBoardView.register(HeaderDashBoardView.self,
                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                withReuseIdentifier: HeaderDashBoardView.resuableViewID)
@@ -93,7 +98,7 @@ class NewDashBoardControllerViewController: UIViewController {
         dashBoardView.topAnchor.constraint(equalTo: layOut.topAnchor).isActive = true
         dashBoardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         dashBoardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        dashBoardView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        dashBoardView.bottomAnchor.constraint(equalTo: layOut.bottomAnchor).isActive = true
     }
 }
 
@@ -105,20 +110,35 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashBoardCell.dashboardCellID,
                                                       for: indexPath) as! DashBoardCell
+        
+        let covidCell = collectionView.dequeueReusableCell(withReuseIdentifier: CovidCell.cellID,
+                                                           for: indexPath) as! CovidCell
+        
         let row = indexPath.row
                 
         cell.title.text = modelDashBoard[row].title
         
         switch row {
         case .zero:
-            cell.dashVariant = .news
+            return covidCell
         case 1:
-            cell.dashVariant = .movies
+            cell.dashVariant = .news
+            cell.seeMoreActionHandler = { [weak self] in
+                guard let this = self else{
+                    return
+                }
+                
+                let controller = NewsViewController()
+                this.navigationController?.pushViewController(controller, animated: true)
+                
+            }
         case 2:
-            cell.dashVariant = .tvShows
+            cell.dashVariant = .movies
         case 3:
-            cell.dashVariant = .music
+            cell.dashVariant = .tvShows
         case 4:
+            cell.dashVariant = .music
+        case 5:
             cell.dashVariant = .cricket
         default:
             cell.dashVariant = .settings
@@ -126,23 +146,9 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
        
         cell.populate()
         
-    
-        cell.seeMoreActionHandler = { [weak self] in
-            guard let this = self else{
-                return
-            }
-            
-            let controller = NewsViewController()
-            this.navigationController?.pushViewController(controller, animated: true)
-            
-        }
-        
         return cell
     }
-    
-    @objc func imageTapped(_ sender:UITapGestureRecognizer){
-        print("selected")
-    }
+
 }
 
 extension NewDashBoardControllerViewController:UICollectionViewDelegate{
@@ -157,6 +163,7 @@ extension NewDashBoardControllerViewController:UICollectionViewDelegate{
             self.navigationController?.pushViewController(controller, animated: true)
         case "Movies":
             let controller = MoviesViewController()
+            controller.selectedImage = cell.selectedImage
             self.navigationController?.pushViewController(controller, animated: true)
         case "TV":
             let controller = MoviesViewController()
@@ -172,6 +179,11 @@ extension NewDashBoardControllerViewController:UICollectionViewDelegateFlowLayou
         
         let size:CGFloat = (collectionView.frame.size.width)
         
-        return CGSize(width: size, height: 300)
+        if indexPath.row == .zero{
+             return CGSize(width: size, height: 75)
+        }else{
+             return CGSize(width: size, height: 300)
+        }
+       
     }
 }

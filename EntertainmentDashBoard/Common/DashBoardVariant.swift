@@ -8,6 +8,7 @@
 
 import Foundation
 enum variant{
+    case covid
     case news
     case movies
     case tvShows

@@ -60,17 +60,17 @@ class PagingNumberView: UIView {
     func setScrollViewConstrainst(){
         addSubview(scrollView)
         scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 5).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -5).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     func setStackViewConstrainst(){
         scrollView.addSubview(hStackView)
-        hStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        hStackView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: 5).isActive = true
         hStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         hStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        hStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        hStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -5).isActive = true
     }
     
     func addLabelsToStackView(){
@@ -83,8 +83,8 @@ class PagingNumberView: UIView {
             let numberLabel = PagingButton()
             numberLabel.setTitle(numberArray[i], for: .normal)
             numberLabel.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
-            numberLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            numberLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            numberLabel.heightAnchor.constraint(equalToConstant: 38).isActive = true
+            numberLabel.widthAnchor.constraint(equalToConstant: 38).isActive = true
             numberLabel.tag = i
             styleNumberLabel(numberLabel)
             hStackView.addArrangedSubview(numberLabel)
@@ -95,7 +95,7 @@ class PagingNumberView: UIView {
     
     func styleNumberLabel(_ label:UIButton){
         label.backgroundColor = globalColor.cellBackground
-        label.layer.cornerRadius = 25
+        label.layer.cornerRadius = 38/2
     }
     
     @objc func numberTapped(_ sender:UIButton){

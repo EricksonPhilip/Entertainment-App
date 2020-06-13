@@ -19,38 +19,25 @@ class ImageWithCaptionView: UIView {
     lazy var topTitle:UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "TOp Title"
         label.textColor = .white
         label.backgroundColor = globalColor.commonBGKColor
         label.textAlignment = .center
         label.lineBreakMode  = .byTruncatingTail
-        label.font = UIFont.boldSystemFont(ofSize: 19)
-        label.alpha = 0.7
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
     }()
-    
-    lazy var bottomTitle:UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Bottom Title"
-        label.textColor = .white
-        label.backgroundColor = globalColor.commonBGKColor
-        label.textAlignment = .center
-        label.lineBreakMode  = .byTruncatingTail
-        label.font = UIFont.boldSystemFont(ofSize: 19)
-        label.alpha = 0.7
-        return label
+        
+    lazy var stackView:UIStackView = {
+        let stackView = UIStackView(frame: .zero)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        return stackView
     }()
     
     var topTitleText:String = ""{
         didSet{
             topTitle.text = topTitleText
-        }
-    }
-    
-    var bottomTitleText:String = ""{
-        didSet{
-            bottomTitle.text = bottomTitleText
         }
     }
     
@@ -64,28 +51,32 @@ class ImageWithCaptionView: UIView {
     }
     
     func setUp(){
-       setImageViewConstraints()
-       labelConstraints()
-    }
-    
-    func setImageViewConstraints(){
-        addSubview(imageView)
-        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-    
-    func labelConstraints(){
-        addSubview(topTitle)
-        topTitle.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        topTitle.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        topTitle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        topTitle.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addSubview(stackView)
+       
+        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        stackView.addArrangedSubview(topTitle)
+        stackView.addArrangedSubview(imageView)
+        
+        let topTitleConst = topTitle.heightAnchor.constraint(equalToConstant: -100)
+        topTitleConst.priority = UILayoutPriority.init(rawValue: 999)
+        topTitleConst.isActive = true
+        
     }
     
     func setImage(strUrl:String){
         let url =  URL(string: strUrl)
-        imageView.sd_setImage(with: url)
+        imageView.sd_setImage(with: url, completed: {
+            (image, error, cacheType, url) in
+            if image == nil{
+                self.topTitle.lineBreakMode = .byWordWrapping
+                self.topTitle.numberOfLines = .zero
+                self.topTitle.textAlignment = .justified
+            }
+        })
+       
     }
 }

@@ -51,14 +51,10 @@ class MoviesViewController: UIViewController {
         configureCollectionView()
         addDiscoverViewNavigationBar()
         addRefreshControl()
-        setPaginViewConstraints()
         setCollectionViewConstraint()
+        setPaginViewConstraints()
         getMovies(variant: .nowPlaying, pageNo: 1)
         handlePageTapped()
-        
-        let selectedIndexPath = IndexPath(item: selectedImage, section: 0)
-        
-        collectionView.scrollToItem(at: selectedIndexPath, at: .bottom, animated: true)
     }
     
     func addDiscoverViewNavigationBar(){
@@ -127,20 +123,24 @@ class MoviesViewController: UIViewController {
     func setPaginViewConstraints(){
         let layOut = view.layoutMarginsGuide
         view.addSubview(pagingNumberView)
-        pagingNumberView.topAnchor.constraint(equalTo: layOut.topAnchor,constant: 10).isActive = true
-        pagingNumberView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pagingNumberView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        pagingNumberView.backgroundColor = UIColor.white
+        pagingNumberView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
+        pagingNumberView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -10).isActive = true
+        pagingNumberView.bottomAnchor.constraint(equalTo: layOut.bottomAnchor,constant: -10).isActive = true
         
-        pagingViewHeightConst = pagingNumberView.heightAnchor.constraint(equalToConstant: 60)
+        pagingViewHeightConst = pagingNumberView.heightAnchor.constraint(equalToConstant: 50)
         pagingViewHeightConst?.isActive = true
+        
+        pagingNumberView.layer.cornerRadius = 10
     }
     
     func setCollectionViewConstraint(){
+        let layOut = view.layoutMarginsGuide
         view.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: pagingNumberView.bottomAnchor,constant: 5).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: pagingNumberView.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: pagingNumberView.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: layOut.topAnchor,constant: 5).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: layOut.bottomAnchor).isActive = true
     }
     
     func beginRefreshingControl(){
@@ -168,10 +168,12 @@ class MoviesViewController: UIViewController {
                 }
                 
                 this.collectionView.reloadData()
-                this.collectionView.scrollToItem(at: IndexPath(item: .zero, section: .zero), at: .top, animated: true)
                 this.refreshControl.endRefreshing()
                 
                 this.currVariant = variant
+                
+                let selectedIndexPath = IndexPath(item: this.selectedImage, section: .zero)
+                this.collectionView.scrollToItem(at: selectedIndexPath, at: .top, animated: true)
                 
             }
         }

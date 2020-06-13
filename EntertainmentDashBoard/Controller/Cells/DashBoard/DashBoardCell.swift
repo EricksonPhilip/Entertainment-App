@@ -54,7 +54,7 @@ class DashBoardCell: UICollectionViewCell {
         view.textColor = .white
         view.backgroundColor = globalColor.commonBGKColor
         view.textAlignment = .center
-        view.font = UIFont.boldSystemFont(ofSize: 19)
+        view.font = UIFont.boldSystemFont(ofSize: 26)
         view.alpha = 0.7
         return view
     }()
@@ -154,6 +154,7 @@ class DashBoardCell: UICollectionViewCell {
     }
     
     func addStuffsToScrollView(){
+        self.layoutIfNeeded()
         scrollView.contentSize = CGSize(width: (bounds.width-10) * 5,
                                           height: 300)
         
@@ -169,9 +170,11 @@ class DashBoardCell: UICollectionViewCell {
             addImagesViewToScrollView()
         case .cricket:
             addMatchesToScrolleView()
+        case .covid:
+            print("")
         }
         
-        self.layoutIfNeeded()
+       
     }
     
     func addImagesViewToScrollView(){
@@ -188,9 +191,6 @@ class DashBoardCell: UICollectionViewCell {
         }
     }
     
-    @objc func tapped(_ sender:UITapGestureRecognizer){
-        print("selected")
-    }
     
     func addMatchesToScrolleView(){
         for i in 0...4{
@@ -207,6 +207,7 @@ class DashBoardCell: UICollectionViewCell {
     }
     
     @objc func nextSlide(_ sender:UIButton){
+         self.layoutIfNeeded()
         selectedImage += 1
         let scrollWidth = bounds.width-10
         let currentXOffset = scrollView.contentOffset.x
@@ -236,6 +237,7 @@ class DashBoardCell: UICollectionViewCell {
     }
     
     @objc func previousSlide(_ sender:UIButton){
+        self.layoutIfNeeded()
         selectedImage -= 1
         let scrollWidth = bounds.width-10
         let currentXOffset = scrollView.contentOffset.x
@@ -281,7 +283,7 @@ class DashBoardCell: UICollectionViewCell {
             getTopMusicTracks()
         case .cricket:
             getCricketMatches()
-        case .settings:
+        case .settings,.covid:
             print("Nothing!")
         }
     }

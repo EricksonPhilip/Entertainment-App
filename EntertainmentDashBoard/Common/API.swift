@@ -47,6 +47,8 @@ public let musicTopTracksUrl = "http://ws.audioscrobbler.com/2.0/?method=chart.g
 public let currentWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?id=4671576&appid=\(weather_API_Key)"
 public let weatherBaseImageUrl = "http://openweathermap.org/img/w/"
 
+public let covidAPI = "https://api.covid19api.com/summary"
+
 public let movie_API_Key = "14264aed83f07b9301a1ac16e7a23325"
 public let music_API_key = "3609d3a8d5793c18b5058b8e546eb45d"
 public let weather_API_Key = "d53b2b21c73db25226c6202e675f40ff"
