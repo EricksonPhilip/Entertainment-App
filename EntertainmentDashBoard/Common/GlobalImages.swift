@@ -40,9 +40,14 @@ struct globalColor {
                                                  blue: 44/255.0,
                                                  alpha: 1.0)
     
-    public static var deathRed = UIColor(red: 220/255.0,
-                                         green: 20/255.0,
-                                           blue: 60/255.0,
+    public static var deathRed = UIColor(red: 139/255.0,
+                                         green: 0/255.0,
+                                           blue: 0/255.0,
                                            alpha: 1.0)
+    
+    public static var drecoveredGreen = UIColor(red: 0/255.0,
+                                         green: 100/255.0,
+                                         blue: 0/255.0,
+                                         alpha: 1.0)
 }
 

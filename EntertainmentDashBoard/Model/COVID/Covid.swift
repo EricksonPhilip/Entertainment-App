@@ -26,7 +26,8 @@ public class Covid{
          totalDeaths:Int,
          newRecovered:Int,
          totalRecovered:Int) {
-        
+        self.country = country
+        self.date = date
         self.newConfirmed = newConfirmed
         self.totalConfirmed = totalConfirmed
         self.newDeaths = newDeaths

@@ -22,8 +22,8 @@ class NewsViewController: UIViewController {
         tblView.tableFooterView = UIView()
         _view = NewsPreLoaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         tblView.backgroundView = _view
-        tblView.separatorStyle = .singleLine
-        tblView.separatorColor = .white
+        tblView.separatorStyle = .none
+        tblView.showsVerticalScrollIndicator = false
         return tblView
     }()
     
@@ -40,7 +40,6 @@ class NewsViewController: UIViewController {
         self.title = "News"
         setUpTableView()
         getTopHeadLines()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,6 +55,7 @@ class NewsViewController: UIViewController {
     
     func registerHeadLineCell(){
         tableView.register(NewsHeadLineCell.self, forCellReuseIdentifier: NewsHeadLineCell.NewsCellID)
+        tableView.register(CovidCell.self, forCellReuseIdentifier: CovidCell.cellID)
     }
     
     func setTableViewConstraints(){
@@ -101,6 +101,13 @@ extension NewsViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if indexPath.row == .zero{
+            let covidCell = tableView.dequeueReusableCell(withIdentifier: CovidCell.cellID,
+                                                            for: indexPath) as! CovidCell
+            covidCell.selectionStyle = .none
+            return covidCell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsHeadLineCell.NewsCellID, for: indexPath) as! NewsHeadLineCell
         let model = viewModel.model[indexPath.row]
         
@@ -111,6 +118,7 @@ extension NewsViewController:UITableViewDataSource{
         cell.selectionStyle = .none
         
         return cell
+    
     }
 }
 

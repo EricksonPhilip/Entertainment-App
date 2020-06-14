@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum covidType{
+    case cases
+    case recovered
+    case deaths
+}
+
 class CovidView: UIView {
    
     lazy var stackView:UIStackView = {
@@ -40,13 +46,16 @@ class CovidView: UIView {
         return label
     }()
     
-    required init(newText:String,
+    var type:covidType = .cases
+    
+    required init(type:covidType,
+                  newText:String,
                   totalText:String,
                   headerText:String) {
         super.init(frame: .zero)
         
         setUp()
-        
+        self.type = type
         newLabel.text = newText
         totalLabel.text = totalText
         headerLabel.text = headerText
@@ -59,7 +68,14 @@ class CovidView: UIView {
     }
     
     override func layoutSubviews() {
-        self.layer.cornerRadius = 10
+        switch type {
+        case .cases:
+            roundCorners(corners: [.topLeft,.bottomLeft], radius: 10)
+        case .deaths:
+            roundCorners(corners: [.topRight,.bottomRight], radius: 10)
+        default:
+            print("none")
+        }
     }
     
     func setUp(){
@@ -80,8 +96,10 @@ class CovidView: UIView {
         
         totalLabel.textColor = .black
         totalLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        headerLabel.textColor = .brown
         
+        headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 12)
     }
 }
+
+

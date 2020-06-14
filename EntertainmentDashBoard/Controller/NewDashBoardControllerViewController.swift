@@ -16,8 +16,7 @@ class NewDashBoardControllerViewController: UIViewController {
     var newsImages:[String] = [String]()
     var moviesImages:[String] = [String]()
     
-    let modelDashBoard :[(image:String,title:String)] = [(image:"NewsBkgSet",title:"Covid"),
-                                                         (image:"NewsBkgSet",title:"News"),
+    let modelDashBoard :[(image:String,title:String)] = [(image:"NewsBkgSet",title:"News"),
                                                          (image:"Joker4k-1024",title:"Movies"),
                                                          (image:"Friends",title:"TV show"),
                                                          (image:"CricketBkg",title:"Music"),
@@ -73,7 +72,6 @@ class NewDashBoardControllerViewController: UIViewController {
     
     func registerDashBoardCell(){
         dashBoardView.register(DashBoardCell.self, forCellWithReuseIdentifier: DashBoardCell.dashboardCellID)
-        dashBoardView.register(CovidCell.self, forCellWithReuseIdentifier: CovidCell.cellID)
         dashBoardView.register(HeaderDashBoardView.self,
                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                withReuseIdentifier: HeaderDashBoardView.resuableViewID)
@@ -110,18 +108,14 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashBoardCell.dashboardCellID,
                                                       for: indexPath) as! DashBoardCell
-        
-        let covidCell = collectionView.dequeueReusableCell(withReuseIdentifier: CovidCell.cellID,
-                                                           for: indexPath) as! CovidCell
+    
         
         let row = indexPath.row
                 
         cell.title.text = modelDashBoard[row].title
         
         switch row {
-        case .zero:
-            return covidCell
-        case 1:
+        case 0:
             cell.dashVariant = .news
             cell.seeMoreActionHandler = { [weak self] in
                 guard let this = self else{
@@ -132,13 +126,13 @@ extension NewDashBoardControllerViewController:UICollectionViewDataSource{
                 this.navigationController?.pushViewController(controller, animated: true)
                 
             }
-        case 2:
+        case 1:
             cell.dashVariant = .movies
-        case 3:
+        case 2:
             cell.dashVariant = .tvShows
-        case 4:
+        case 3:
             cell.dashVariant = .music
-        case 5:
+        case 4:
             cell.dashVariant = .cricket
         default:
             cell.dashVariant = .settings
@@ -178,12 +172,8 @@ extension NewDashBoardControllerViewController:UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let size:CGFloat = (collectionView.frame.size.width)
+    
+        return CGSize(width: size, height: 300)
         
-        if indexPath.row == .zero{
-             return CGSize(width: size, height: 115)
-        }else{
-             return CGSize(width: size, height: 300)
-        }
-       
     }
 }

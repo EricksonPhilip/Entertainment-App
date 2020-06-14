@@ -47,8 +47,7 @@ class NewsHeadLineCell: UITableViewCell {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Read More...", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.contentHorizontalAlignment = .right
+        button.setTitleColor(.lightGray, for: .normal)
         button.addTarget(self, action: #selector(readMoreButtonAction), for: .touchUpInside)
         return button
     }()
@@ -87,8 +86,7 @@ class NewsHeadLineCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        layoutIfNeeded()
-        readMore.contentEdgeInsets = UIEdgeInsets(top: 0, left: readMore.frame.width + 10, bottom: 0, right: 0)
+        spacerView.widthAnchor.constraint(equalToConstant: self.frame.width).isActive = true
     }
 
     func setUp(){
@@ -107,6 +105,10 @@ class NewsHeadLineCell: UITableViewCell {
     }
     
     func addControlsToStackView(){
+        
+        stackView.addArrangedSubview(spacerView)
+        spacerView.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+        spacerView.backgroundColor = .white
         stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(imgView)
         stackView.addArrangedSubview(desc)

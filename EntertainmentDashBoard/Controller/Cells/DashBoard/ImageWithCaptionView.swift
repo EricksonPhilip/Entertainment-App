@@ -31,7 +31,7 @@ class ImageWithCaptionView: UIView {
         let stackView = UIStackView(frame: .zero)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.spacing = 5
         return stackView
     }()
@@ -61,11 +61,6 @@ class ImageWithCaptionView: UIView {
         
         stackView.addArrangedSubview(topTitle)
         stackView.addArrangedSubview(imageView)
-        
-        let topTitleConst = topTitle.heightAnchor.constraint(equalToConstant: -100)
-        topTitleConst.priority = UILayoutPriority.init(rawValue: 999)
-        topTitleConst.isActive = true
-        
     }
     
     func setImage(strUrl:String){
