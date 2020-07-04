@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CovidCell: UITableViewCell {
+class Covid19View: UIView {
     
     static var cellID = "CovidCell"
     var viewModel:CovidViewModel = CovidViewModel()
@@ -48,6 +48,7 @@ class CovidCell: UITableViewCell {
         let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         segView.setTitleTextAttributes(normalTextAttributes, for: .normal)
         segView.setTitleTextAttributes(selectedTextAttributes, for: .selected)
+        segView.backgroundColor = .darkGray
         
         return segView
     }()
@@ -56,27 +57,27 @@ class CovidCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUp()
         getCovidData()
     }
-    
+   
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func setUp(){
         
-        contentView.addSubview(segmentedControl)
-        segmentedControl.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        segmentedControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        addSubview(segmentedControl)
+        segmentedControl.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        segmentedControl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        contentView.addSubview(mainStackView)
+        addSubview(mainStackView)
         mainStackView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor,constant: 10).isActive = true
-        mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
-        mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 5).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -5).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -5).isActive = true
         mainStackView.heightAnchor.constraint(equalToConstant: 75).isActive = true
         
         backgroundColor = globalColor.cellBackground

@@ -55,7 +55,6 @@ class NewsViewController: UIViewController {
     
     func registerHeadLineCell(){
         tableView.register(NewsHeadLineCell.self, forCellReuseIdentifier: NewsHeadLineCell.NewsCellID)
-        tableView.register(CovidCell.self, forCellReuseIdentifier: CovidCell.cellID)
     }
     
     func setTableViewConstraints(){
@@ -99,14 +98,14 @@ extension NewsViewController:UITableViewDataSource{
         return viewModel.numberOfNews()
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let covidView = Covid19View(frame: CGRect(x: 0, y: 0,
+                                                  width: tableView.frame.size.width,
+                                                  height: 130))
+        return covidView
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == .zero{
-            let covidCell = tableView.dequeueReusableCell(withIdentifier: CovidCell.cellID,
-                                                            for: indexPath) as! CovidCell
-            covidCell.selectionStyle = .none
-            return covidCell
-        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsHeadLineCell.NewsCellID, for: indexPath) as! NewsHeadLineCell
         let model = viewModel.model[indexPath.row]
@@ -142,6 +141,10 @@ extension NewsViewController:cellReadMoreDelegate{
                 self.present(NewsSource, animated: true, completion: nil)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 130
     }
 
 }

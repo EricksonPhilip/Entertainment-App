@@ -14,7 +14,7 @@ class CovidViewModel{
     let covidServices = ServiceManager()
     
     func getCovidData(completed:@escaping (Bool,Covid) -> ()){
-        covidServices.servicesGET(STRURL: covidAPI ){
+        covidServices.servicesGET(STRURL: covidAPI){
             response,error in
             
             guard response != nil && error == nil else {
@@ -24,6 +24,7 @@ class CovidViewModel{
             
             let date = response!["Date"]
             let countries = response!["Countries"]
+            
             
             var globalCovid:Covid? = nil
             if let global =  response!["Global"]{
@@ -70,3 +71,5 @@ class CovidViewModel{
         }
     }
 }
+
+
