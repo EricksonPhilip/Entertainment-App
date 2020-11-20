@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4B5F23E-67F1-4B78-AF06-0A6B12674883"
+            uuid = "AEF79ED3-3C43-49E0-B1D1-21896A5A5656"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EntertainmentDashBoard/Controller/Cells/DashBoard/DashBoardCell.swift"
+            filePath = "EntertainmentDashBoard/Controller/SourceWebViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "addStuffsToScrollView()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
